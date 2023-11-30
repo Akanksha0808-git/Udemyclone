@@ -1,0 +1,64 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+
+.banner{
+    width: 100vw;
+    margin-top: 50px;
+
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f7f9fa;
+    
+}
+.text{
+    width: 50%; /* or any other width */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.banner p{
+    color: #6a6f73;
+    /* font-weight: 400; */
+    margin-bottom: 2.4rem;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+
+.bannerimages{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    
+    
+}
+.bannerimages img{
+
+  height: 40px;
+  width: auto;
+}
+
+.broad-section-courses{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+
+}
+
+
+@media (max-width: 1150px){
+    .bannerimages{
+        flex-wrap: wrap;
+    }
+}

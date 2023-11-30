@@ -1,0 +1,32 @@
+/* .searchbar{
+    display: flex;
+    position: relative;
+    width: 47vw;
+    height: 45px;
+    flex-grow: 1;
+    border: 1px solid #2d2f31;
+    border-radius: 9999px;
+    background-color: #f7f9fa;
+}
+
+
+.search {
+    font-family: var(--font-stack-text);
+
+    position: relative;
+    top: 10px;
+    left: 49px;
+    border: none;
+
+    width: 78%;
+    font-size: 16px;
+  }
+  .searchbtn{
+    font-size: 17px;
+    border: none;
+    background-color: #ffff;
+    position: absolute;
+    top: 12px;
+    left: 6px;
+    color: gray;
+  } */
