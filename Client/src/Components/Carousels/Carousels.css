@@ -97,10 +97,7 @@ align-items: center;
   transition: transform 0.5s ease; /* Added transition for smooth movement */
 }
 
-.card img {
-  /* width: 100%; */
-  /* height: auto; */
-}
+
 
 .card-content {
   padding: 16px;
