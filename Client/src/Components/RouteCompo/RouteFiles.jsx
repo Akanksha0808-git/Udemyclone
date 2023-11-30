@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter ,Routes ,Route } from 'react-router-dom';
 import Home from '../Pages/Home';
-import Categories from '../Pages/categories/categories';
+import Categories from '../Pages/categories/Categories';
 import Navbar from '../Navbar/Navbar';
 import TechOnUdemy from '../Pages/TechOnUdemy';
 import UdemyBuisness from '../Pages/UdemyBuisness';
