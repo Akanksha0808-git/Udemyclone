@@ -62,4 +62,65 @@ align-items: center;
       margin-top: 30px;
     }
   }
-  
+  /* CardCarousel.css */
+
+.card-carousel {
+  /* background-color: yellow; */
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  justify-content: space-around;
+  margin: auto;
+  overflow: hidden;
+}
+
+.cards-container {
+  /* background-color: red; */
+  height: auto;
+  width:1080px;
+  display: flex;
+  justify-content: center;
+  transition: transform 0.5s ease; /* Added transition for smooth movement */
+}
+
+.card {
+  width: 900px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  /* width: calc(100% / 3 - 16px); */
+   /* Adjust the card width and margin as needed */
+  margin-right: 16px;
+  box-sizing: border-box;
+  transition: transform 0.5s ease; /* Added transition for smooth movement */
+}
+
+.card img {
+  /* width: 100%; */
+  /* height: auto; */
+}
+
+.card-content {
+  padding: 16px;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  padding: 8px;
+  cursor: pointer;
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.prev-btn {
+  left: 8px;
+}
+
+.next-btn {
+  right: 8px;
+}

@@ -1,22 +1,322 @@
-body{
+/* body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
  
-  .logog{
-    /* width: 130px; */
-    /* background-color: #d95394; */
-    /* position: relative; */
-    top: 16px;
-transform: translateY(18px);
+  .logog {
 
-   display: flex;
-   align-items: center;
+    top: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
   }
-  .logog img{
-/* padding-left: 24px; */
-transform: translateX(29px);
+  
+  .logog img {
+  
+    margin-left: 24px;
+  }
+  
+ .outerbox{
+  position: relative;
+  top: -30px;
+ }
+.navbar{
+     height: 73px;
+     width: 100vw;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 2px 8px rgba(0,0,0,.08), 0 4px 12px rgba(0, 0, 0, 0.804);
+    z-index: 1010;
+}
+.navbar ul{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.navbar li a {
+  
+    font-family: sans-serif;
+    color: rgba(0, 0, 0, 0.47);
+  
+    letter-spacing: -.02rem;
+    font-size:15px;
+    text-decoration: none;
+    
+  }
+  nav ul li a:not(.active):hover {
+    background-color:hotpink;
+    color: #fff;
+  }
+.menubox{
+  position: relative;
+  top: 30px;
+  
+    font-family: var(--font-stack-text);
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    align-items: center;
+
+}
+.menubox ul{
+margin-left: -120px;
+}
+
+   .menu {
+    display: flex;
+   justify-content:flex-start;
+   height: 0px;
+    width: 100%;
+    list-style: none;
+    text-decoration: none;
+    gap: 20px;
+     padding: 1rem;
+   
+  }
+.notactiveClass{
+    color: rgb(0, 0, 0);
+    transition-delay: 0.2s ease;
+}
+
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  
+  .hamburger span {
+    width: 30px;
+    height: 3px;
+    background-color:#2d2f31;
+
+
+    margin: 4px 0;
+    transition: all 0.3s ease;
+  }
+  
+   .hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-9px, 10px);
+    background-color:hotpink;
+
+  }
+  
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -7px);
+  }
+
+
+  .btn{
+    height: 40px;
+    width: 90px;
+    margin: 0px 4px;
+    cursor: pointer;
+  }
+  .btn:hover {
+    background-color: gray ;
+  }
+  .btnlogin{
+    background-color: white;
+    border: none;
+    border: 1px solid rgb(76, 74, 74);
+   
+  }
+  .btnsignup{
+    background-color: rgba(45, 45, 44, 0.932);
+    color: white;
+    font-weight: 600;
+  }
+
+  .cart{
+    display: flex;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    
+  }
+  .global{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: auto;
+    border: 1px solid rgb(76, 74, 74);
+   
+  }
+  .global:hover{
+    background-color: gray ;
+  }
+  .hoverable{
+    margin-left: 120px;
+  }
+  .searchbar{
+    display: flex;
+    position: relative;
+    width: 47vw;
+    height: 45px;
+    flex-grow: 1;
+    border: 1px solid #2d2f31;
+    border-radius: 9999px;
+    background-color: #f7f9fa;
+}
+
+
+.search {
+    font-family: var(--font-stack-text);
+
+    position: relative;
+    top: 10px;
+    left: 49px;
+    border: none;
+
+    width: 78%;
+    font-size: 16px;
+  }
+  .searchbtn{
+    font-size: 17px;
+    border: none;
+    background-color: #ffff;
+    position: absolute;
+    top: 12px;
+    left: 6px;
+    color: gray;
+  }
+ 
+
+  @media  (max-width: 823px) {
+    .btn{
+      display: none;
+    }
+    .global{
+      display: none;
+    }
+    .logog{
+      width: 100%;
+      
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hamburgerBox{
+        position: absolute;
+        top: 9px;
+        height: 33px;
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+   
+       }
+       .black-link {
+        color: #fff;
+        display: flex;
+        justify-content: center;
+      }
+    
+      .menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+          z-index: 60;
+            gap: 1px;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+          background-color: #d95394;
+              position: absolute;
+              top: 55px;
+              height: 200px;
+              width: 30%;
+              opacity: 0;
+              pointer-events: none;
+              transition: all 0.3s ease;
+        
+      }
+  
+  
+      .menu.open {
+        display: flex;
+        justify-content: center;
+        opacity: 1;
+        pointer-events: auto;
+      }
+      
+      .hamburger {
+        display: flex;
+   
+      }
+      .hamburger span {
+        border-radius: 60px;
+       
+      }
+      .hamburger.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-9px, 10px);
+        background-color:#2d2f31;
+  
+      }
+      
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+      
+      .hamburger.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -7px);
+        background-color:#2d2f31;
+
+      }
+      .activeClass{
+        color: rgb(185, 49, 239) !important;}
+
+        .cart{
+          width: 100%;
+          display: flex;
+          justify-content: flex-end;
+        }
+
+
+
+
+        .searchbar{
+   
+    display: none;
+}
+}
+
+
+  @media (max-width: 1080px){
+.mobiles-link{
+  display: none;
+}
+
+  }
+  @media (max-width: 920px){
+.udemy{
+  display: none;
+}
+  } */
+
+  body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+ 
+  .logog {
+
+    top: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .logog img {
+  margin-top: 2px;
+    margin-left: 24px;
   }
  .outerbox{
   position: relative;
@@ -134,7 +434,7 @@ transform: translateX(29px);
     height: 30px;
     width: 30px;
     cursor: pointer;
-    margin-left: -45px;
+    margin-left: -345px;
     
   }
   .global{
