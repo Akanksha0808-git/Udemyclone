@@ -69,7 +69,7 @@ align-items: center;
   position: relative;
   display: flex;
   align-items: center;
-  width: 100vw;
+  width: 80vw;
   justify-content: space-around;
   margin: auto;
   overflow: hidden;
@@ -78,14 +78,15 @@ align-items: center;
 .cards-container {
   /* background-color: red; */
   height: auto;
-  width:1080px;
+  width:100%;
   display: flex;
   justify-content: center;
   transition: transform 0.5s ease; /* Added transition for smooth movement */
 }
 
 .card {
-  width: 900px;
+  /* width: 900px; */
+  height: 200px;
   border: 1px solid #ccc;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
