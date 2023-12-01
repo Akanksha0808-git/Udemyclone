@@ -63,13 +63,15 @@ body{
     }
 }
 .topcategories {
-    width: 90vw;
+    /* width: 90vw; */
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center; /* Center the content */
   }
   .topcategories h2{
-    text-align: left;
-    margin-left: 32px;
+   
   }
   
   .cardsline1,

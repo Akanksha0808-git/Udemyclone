@@ -79,7 +79,13 @@ const Home = () => {
             <div><img src="https://s.udemycdn.com/home/top-categories/lohp-category-music-v2.jpg" alt="" /><h3>Music</h3></div>
 
           </div>
+
         </div>
+
+
+
+
+        
     </div>
   )
 }
