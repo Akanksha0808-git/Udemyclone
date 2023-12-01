@@ -8,7 +8,7 @@ const Home = () => {
     <div>
       <Carousel1/>
    
-      <div className='banner'>
+      {/* <div className='banner'>
       <div className='text'>
       <p>Trusted by over 15,000 companies and millions of learners around the world</p>
        </div>
@@ -28,7 +28,7 @@ const Home = () => {
        </div>
 
       
-      </div>
+      </div> */}
     
 
     <p></p>

@@ -434,7 +434,7 @@ margin-left: -120px;
     height: 30px;
     width: 30px;
     cursor: pointer;
-    margin-left: -345px;
+    /* margin-left: -345px; */
     
   }
   .global{
@@ -580,7 +580,7 @@ margin-left: -120px;
    
     display: none;
 }
-
+  }
   @media (max-width: 1080px){
 .mobiles-link{
   display: none;
@@ -591,4 +591,12 @@ margin-left: -120px;
 .udemy{
   display: none;
 }
-  }}
+  }
+  @media (max-width: 415px)and (min-width: 375px){
+    .navbar{
+      width: 105%;
+    }
+  .cart{
+    /* display: none; */
+  }
+      }

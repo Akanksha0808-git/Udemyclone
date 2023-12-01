@@ -231,18 +231,18 @@ const Navbar = () => {
         </ul>
        
 {/* <Addtocart/> */}
-{/* <div className='cart'>
+<div className='cart'>
 <div  className={({ isActive }) => (isActive ? 'activeClass' : 'notactiveClass')} onClick={toggleMenu}>
   <img src="https://www.vhv.rs/dpng/d/459-4593681_empty-shopping-cart-shopping-cart-icon-svg-hd.png" alt="img" style={{height:"25px", width:"25px"}} />
 </div>
-</div> */}
+</div>
 
 
         <button className='btnlogin btn'>Login</button>
         <button className='btnsignup btn'>Signup</button>
-         <div className='global' >
+         {/* <div className='global' >
           <img src="https://png.pngtree.com/png-clipart/20190520/original/pngtree-vector-globe-icon-png-image_3787753.jpg" alt="I" style={{height:"30px", width:"30px"}} />
-         </div>
+         </div> */}
         </div>
 
 

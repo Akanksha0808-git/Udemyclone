@@ -122,6 +122,11 @@ align-items: center;
 .next-btn {
   right: 8px;
 }
+
+
+
+
+
 .carousel-card-container{
   margin-top: 50px;
   height: 400px;
@@ -131,6 +136,7 @@ align-items: center;
   align-items: center;
 }
 .card-carousel{
+  border: 1px solid black;
   height: 300px;
   width: 50%;
   background-color: #fff;
@@ -165,16 +171,14 @@ align-items: center;
   
 }
 
-
-
-
-
-
-
 @media (max-width: 980px){
   .carousel-card-container{
     margin-top: 250px;}
   
+    .card-carousel{
+      flex-direction: column;
+      gap: 0;
+    }
 }
 
 
