@@ -62,7 +62,24 @@ const Home = () => {
         </div>
         </div>
 
-        <Carousel2/>
+        {/* <Carousel2/> */}
+        <div className='topcategories'>
+          <h2>Top categories</h2>
+          <div className='cardsline1'>
+            <div><img src="https://s.udemycdn.com/home/top-categories/lohp-category-design-v2.jpg" alt="" /><h3>Design</h3></div>
+            <div><img src="https://s.udemycdn.com/home/top-categories/lohp-category-development-v2.jpg" alt="" /><h3>Development</h3></div>
+            <div><img src="https://s.udemycdn.com/home/top-categories/lohp-category-marketing-v2.jpg" alt="" /><h3>Marketing</h3></div>
+            <div><img src="https://s.udemycdn.com/home/top-categories/lohp-category-it-and-software-v2.jpg" alt="" /><h3>IT and Software</h3></div>
+
+          </div>
+          <div className='cardsline2'>
+            <div><img src="https://s.udemycdn.com/home/top-categories/lohp-category-personal-development-v2.jpg" alt="" /><h3>Personal Developement</h3></div>
+            <div><img src="https://s.udemycdn.com/home/top-categories/lohp-category-business-v2.jpg" alt="" /><h3>Buisness</h3></div>
+            <div><img src="https://s.udemycdn.com/home/top-categories/lohp-category-photography-v2.jpg" alt="" /><h3>Photography</h3></div>
+            <div><img src="https://s.udemycdn.com/home/top-categories/lohp-category-music-v2.jpg" alt="" /><h3>Music</h3></div>
+
+          </div>
+        </div>
     </div>
   )
 }
