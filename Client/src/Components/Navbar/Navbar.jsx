@@ -194,14 +194,13 @@ const Navbar = () => {
             Categories
             </NavLink>
           </li>
-          {/* <Searchbar/> */}
 
           {/* -------searchbar here-------- */}
           <li>
       
           <div className='searchbar'>
     <form>
-    <button className='searchbtn'> <FontAwesomeIcon icon={faSearch}  /></button>
+    <button className='searchbtnn'> <FontAwesomeIcon icon={faSearch}  /></button>
       <input
           type="text"
           placeholder="Search for anything"

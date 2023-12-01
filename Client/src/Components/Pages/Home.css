@@ -18,14 +18,13 @@ body{
     
 }
 .text{
-    width: 50%; /* or any other width */
+    width: 50%; 
     margin-left: auto;
     margin-right: auto;
 }
 
 .banner p{
     color: #6a6f73;
-    /* font-weight: 400; */
     margin-bottom: 2.4rem;
     align-items: center;
     font-size: 1.5rem;
@@ -69,26 +68,24 @@ body{
     }
 }
 .topcategories {
-    /* width: 90vw; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center; /* Center the content */
+    text-align: center; 
   }
   
   
   .cardsline1,
   .cardsline2 {
     display: flex;
-    justify-content: center; /* Distribute items with space around them */
-    margin: 20px 0; /* Add some margin between the lines */
-  }
+    justify-content: center; 
+    margin: 20px 0; }
   
   .cardsline1 div,
   .cardsline2 div {
     flex: 1;
-    margin: 0 10px; /* Add some margin between the cards */
+    margin: 0 10px;
   }
   
   .cardsline1 img,
@@ -98,7 +95,7 @@ body{
   }
   
   h3 {
-    margin-top: 10px; /* Add some space between image and text */
+    margin-top: 10px; 
   }
   .non-students{
     margin-top: 50px;
