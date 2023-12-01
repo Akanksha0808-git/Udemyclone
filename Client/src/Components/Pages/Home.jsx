@@ -2,6 +2,7 @@ import React from 'react'
 import Carousel1 from '../Carousels/Carousel1'
 import "./Home.css"
 import Carousel2 from '../Carousels/Carousel2'
+import Carousel3 from '../Carousels/Carousel3'
 const Home = () => {
   return (
     <div>
@@ -99,8 +100,20 @@ const Home = () => {
     <img src="https://s.udemycdn.com/home/non-student-cta/UB_Promo_800x800.jpg" alt="imghere" height="400px" width="400px"/>
   </div>
 </div>
-
-
+<Carousel3/>
+{/* -------------------------------------------------- */}
+<div className='non-students'>
+  
+  <div className='rightside' >
+    <img src="https://s.udemycdn.com/home/non-student-cta/instructor-1x-v3.jpg" alt="imghere" height="400px" width="400px"/>
+  </div>
+  <div className='nextside'>
+    <h1>Become an instructor</h1>
+    <p>Instructors from around the world teach millions of learners on Udemy. We provide the tools and skills to teach what you love.</p>
+    
+    <button className=' getbtn'>Start Teaching Today</button>
+  </div>
+</div>
 
 
     </div>

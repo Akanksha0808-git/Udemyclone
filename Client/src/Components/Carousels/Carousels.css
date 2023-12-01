@@ -122,3 +122,62 @@ align-items: center;
 .next-btn {
   right: 8px;
 }
+.carousel-card-container{
+  margin-top: 50px;
+  height: 400px;
+  background-color: rgba(128, 128, 128, 0.121);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-carousel{
+  height: 300px;
+  width: 50%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+.leftcontent{
+  height: 80%;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 20px;
+  
+}
+.leftcontent p{
+  font-size: 18px;
+  
+}
+.rightcontent{
+  height: 80%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: -20px;
+}
+.rightcontent img{
+  border-radius: 50%;
+  
+}
+
+
+
+
+
+
+
+@media (max-width: 980px){
+  .carousel-card-container{
+    margin-top: 250px;}
+  
+}
+
+
+
+
+

@@ -58,8 +58,14 @@ body{
 
 
 @media (max-width: 1150px){
+    .banner{
+        margin-top: 150px;
+    }
     .bannerimages{
-        flex-wrap: wrap;
+        flex-wrap: no-wrap;
+    }
+    .broad-section-courses{
+        margin-top: 80px;
     }
 }
 .topcategories {
@@ -97,6 +103,7 @@ body{
   .non-students{
     margin-top: 50px;
     width: 100%;
+    height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -106,6 +113,19 @@ body{
   .leftside{
     height: 400px;
     width: 400px;
+  }
+  .nextside{
+    height: 300px;
+    width: 400px;
+  }
+  .nextside h1{
+    font-size: 42px;
+  }
+  .nextside p{
+    font-size: 19px;
+font-family: sans-serif;
+padding: 5px 0px;
+
   }
   .leftside h1{
     font-size: 40px;
@@ -136,4 +156,16 @@ padding: 4px;
     color: black;
     font-size: 14px;
     font-weight: 600;
+}
+@media (max-width: 980px){
+    .non-students{
+        margin-top:190px ;
+        justify-content: center;
+        flex-direction: column;
+    }
+     .rightside img{
+        height: 350px;
+        width: 250px;
+
+    }
 }

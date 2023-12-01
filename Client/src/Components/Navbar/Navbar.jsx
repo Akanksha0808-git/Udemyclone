@@ -231,11 +231,11 @@ const Navbar = () => {
         </ul>
        
 {/* <Addtocart/> */}
-<div className='cart'>
+{/* <div className='cart'>
 <div  className={({ isActive }) => (isActive ? 'activeClass' : 'notactiveClass')} onClick={toggleMenu}>
   <img src="https://www.vhv.rs/dpng/d/459-4593681_empty-shopping-cart-shopping-cart-icon-svg-hd.png" alt="img" style={{height:"25px", width:"25px"}} />
 </div>
-</div>
+</div> */}
 
 
         <button className='btnlogin btn'>Login</button>
