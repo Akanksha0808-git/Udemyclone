@@ -70,9 +70,7 @@ body{
     align-items: center;
     text-align: center; /* Center the content */
   }
-  .topcategories h2{
-   
-  }
+  
   
   .cardsline1,
   .cardsline2 {
@@ -96,4 +94,46 @@ body{
   h3 {
     margin-top: 10px; /* Add some space between image and text */
   }
-  
+  .non-students{
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 90px;
+
+  }
+  .leftside{
+    height: 400px;
+    width: 400px;
+  }
+  .leftside h1{
+    font-size: 40px;
+  }
+  .leftside ul{
+font-size: 20px;
+font-family: sans-serif;
+color: #2d2f31;
+  }
+  .leftside li{
+padding: 4px;
+
+  }
+.getbtn{
+    height: 50px;
+    width: 180px;
+    background-color:rgb(74, 68, 68);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 15px;
+
+}
+.learnbtn{
+    height: 50px;
+    width: 100px;
+    background-color: #fff;
+    color: black;
+    font-size: 14px;
+    font-weight: 600;
+}

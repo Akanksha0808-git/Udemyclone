@@ -82,10 +82,27 @@ const Home = () => {
 
         </div>
 
+<div className='non-students'>
+  <div className='leftside'>
+    <div className='logo'><img src="https://www.udemy.com/staticx/udemy/images/v7/logo-ub.svg" alt="" height="32px" width="192px" /></div>
+    <h1>Upskill your team with <br /> Udemy Business</h1>
+    <ul>
+      <li>Unlimited access to 25,000+ top Udemy <br /> courses, anytime, anywhere</li>
+      <li>International course collection in 14 <br /> languages</li>
+      <li>Top certifications in tech and business</li>
+
+    </ul>
+    <button className=' getbtn'>Get Udemy Buisness</button>
+    <button className=' learnbtn'>Learn more</button>
+  </div>
+  <div className='rightside' >
+    <img src="https://s.udemycdn.com/home/non-student-cta/UB_Promo_800x800.jpg" alt="imghere" height="400px" width="400px"/>
+  </div>
+</div>
 
 
 
-        
+
     </div>
   )
 }
