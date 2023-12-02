@@ -3,6 +3,7 @@ import Carousel1 from '../Carousels/Carousel1'
 import "./Home.css"
 import Carousel2 from '../Carousels/Carousel2'
 import Carousel3 from '../Carousels/Carousel3'
+import Footer from '../Footer/Footer'
 const Home = () => {
   return (
     <div>
@@ -102,7 +103,7 @@ const Home = () => {
 </div>
 <Carousel3/>
 {/* -------------------------------------------------- */}
-<div className='non-students'>
+<div className='non-student'>
   
   <div className='rightside' >
     <img src="https://s.udemycdn.com/home/non-student-cta/instructor-1x-v3.jpg" alt="imghere" height="400px" width="400px"/>
@@ -115,6 +116,7 @@ const Home = () => {
   </div>
 </div>
 
+<Footer/>
 
     </div>
   )

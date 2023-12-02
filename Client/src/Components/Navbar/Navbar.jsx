@@ -139,17 +139,8 @@ import React , { useState }from 'react'
 import { NavLink ,Link} from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import "./Navbar.css";
 
-// import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-// import { IoCartOutline } from "react-icons/io5";
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faCartShopping } from '@fortawesome/free-regular-svg-icons';
-// import '@fortawesome/fontawesome-svg-core/styles.css'; // Import the styles
-
-import "./Navbar.css"
-import Searchbar from './Searchbar'
-import Addtocart from '../AddToCart/Addtocart'
-// import Addtocart from '../AddToCart/Addtocart'
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -167,17 +158,7 @@ const Navbar = () => {
 <img src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg" alt="Udemy" width="91" height="34" loading="lazy"></img>
 </Link>
         </div>
-        {/* <div className='menubox'>
       
-  <NavLink to="/category">Categories</NavLink>
-  
-<Searchbar/>
-  <NavLink to="/udemybuisness">UdemyBuisness</NavLink>
-  
-
-  <NavLink to="/techonudemy">Teach On Udemy</NavLink>
-
-  </div> */}
   <div className='outerbox'>
 <div className='hamburgerBox'>
         <div className={`hamburger ${menuOpen ? 'active' : ''}`} onClick={toggleMenu}>

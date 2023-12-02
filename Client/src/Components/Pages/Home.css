@@ -68,6 +68,7 @@ body{
     }
 }
 .topcategories {
+  width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -78,7 +79,9 @@ body{
   
   .cardsline1,
   .cardsline2 {
+    width: 100%;
     display: flex;
+    /* height: 100px; */
     justify-content: center; 
     margin: 20px 0; }
   
@@ -97,7 +100,24 @@ body{
   h3 {
     margin-top: 10px; 
   }
+  @media (max-width: 980px){
+    .topcategories {
+      width: 100%;
+        /* display: flex; */
+       
+      }
+  }
   .non-students{
+    margin-top: 50px;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 90px;
+
+  }
+  .non-student{
     margin-top: 50px;
     width: 100%;
     height: 500px;
@@ -139,6 +159,7 @@ padding: 4px;
 .getbtn{
     height: 50px;
     width: 180px;
+    width: 100%;
     background-color:rgb(74, 68, 68);
     color: #fff;
     font-size: 14px;
@@ -156,15 +177,27 @@ padding: 4px;
 }
 @media (max-width: 980px){
     .non-students{
+      width: 100%;
         margin-top:190px ;
         justify-content: center;
         flex-direction: column;
     }
+    .non-student{
+      width: 100%;
+      /* margin-top:190px ; */
+      gap: 10px;
+      justify-content: center;
+      flex-direction: column;
+    }
     
  
      .rightside img{
-        height: 350px;
+        height: 250px;
         width: 250px;
 
+    }
+    .nextside{
+
+margin-top: -40px;
     }
 }
