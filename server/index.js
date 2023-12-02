@@ -1,0 +1,267 @@
+const data=[
+
+{
+    id:'1',
+    category:'Buisness',
+    subcategory:'Communication',
+    heading:'',
+    img:'',
+    author:'',
+    rating:'',
+    price:''
+},
+{
+    id:'2',
+    category:'Buisness',
+    subcategory:'Communication',
+    heading:'',
+    img:'',
+    author:'',
+    rating:'',
+    price:''
+},{
+    id:'3',
+    category:'Buisness',
+    subcategory:'Communication',
+    heading:'',
+    img:'',
+    author:'',
+    rating:'',
+    price:''
+},{
+    id:'4',
+    category:'Buisness',
+    subcategory:'Communication',
+    heading:'',
+    img:'',
+    author:'',
+    rating:'',
+    price:''
+},{
+    id:'5',
+    category:'Buisness',
+    subcategory:'Communication',
+    heading:'',
+    img:'',
+    author:'',
+    rating:'',
+    price:''
+},
+{
+    id:'6',
+    category:'Buisness',
+    subcategory:'Managements',
+    heading:'',
+    img:'',
+    author:'',
+    rating:'',
+    price:''
+},
+{
+    id:'7',
+    category:'Buisness',
+    subcategory:'Managements',
+    heading:'',
+    img:'',
+    author:'',
+    rating:'',
+    price:''
+},{
+    id:'8',
+    category:'Buisness',
+    subcategory:'Managements',
+    heading:'',
+    img:'',
+    author:'',
+    rating:'',
+    price:''
+},{
+    id:'9',
+    category:'Buisness',
+    subcategory:'Managements',
+    heading:'',
+    img:'',
+    author:'',
+    rating:'',
+    price:''
+},{
+    id:'10',
+    category:'Buisness',
+    subcategory:'Managements',
+    heading:'',
+    img:'',
+    author:'',
+    rating:'',
+    price:''
+},
+{
+    id:'11',
+    category:'Buisness',
+    subcategory:'Buisness Strategy',
+    heading:'',
+    img:'',
+    author:'',
+    rating:'',
+    price:''
+},
+{
+    id:'12',
+    category:'Buisness',
+    subcategory:'Buisness Strategy',
+    heading:'',
+    img:'',
+    author:'',
+    rating:'',
+    price:''
+},{
+    id:'13',
+    category:'Buisness',
+    subcategory:'Buisness Strategy',
+    heading:'',
+    img:'',
+    author:'',
+    rating:'',
+    price:''
+},{
+    id:'14',
+    category:'Buisness',
+    subcategory:'Buisness Strategy',
+    heading:'',
+    img:'',
+    author:'',
+    rating:'',
+    price:''
+},
+{
+    id:'15',
+    category:'Buisness',
+    subcategory:'Buisness Strategy',
+    heading:'',
+    img:'',
+    author:'',
+    rating:'',
+    price:''
+},
+{
+    id:'16',
+    category:'Buisness',
+    subcategory:'Operations',
+    heading:'',
+    img:'',
+    author:'',
+    rating:'',
+    price:''
+},
+{
+    id:'17',
+    category:'Buisness',
+    subcategory:'Operations',
+    heading:'',
+    img:'',
+    author:'',
+    rating:'',
+    price:''
+},{
+    id:'18',
+    category:'Buisness',
+    subcategory:'Operations',
+    heading:'',
+    img:'',
+    author:'',
+    rating:'',
+    price:''
+},{
+    id:'19',
+    category:'Buisness',
+    subcategory:'Operations',
+    heading:'',
+    img:'',
+    author:'',
+    rating:'',
+    price:''
+},{
+    id:'20',
+    category:'Buisness',
+    subcategory:'Operations',
+    heading:'',
+    img:'',
+    author:'',
+    rating:'',
+    price:''
+},
+{
+    id:'21',
+    category:'Buisness',
+    subcategory:'Human Resources',
+    heading:'',
+    img:'',
+    author:'',
+    rating:'',
+    price:''
+},
+{
+    id:'22',
+    category:'Buisness',
+    subcategory:'Human Resources',
+    heading:'',
+    img:'',
+    author:'',
+    rating:'',
+    price:''
+},{
+    id:'23',
+    category:'Buisness',
+    subcategory:'Human Resources',
+    heading:'',
+    img:'',
+    author:'',
+    rating:'',
+    price:''
+},{
+    id:'24',
+    category:'Buisness',
+    subcategory:'Human Resources',
+    heading:'',
+    img:'',
+    author:'',
+    rating:'',
+    price:''
+},{
+    id:'25',
+    category:'Buisness',
+    subcategory:'Human Resources',
+    heading:'',
+    img:'',
+    author:'',
+    rating:'',
+    price:''
+},
+{
+    id:'26',
+    category:'Buisness',
+    subcategory:'Human Resources',
+    heading:'',
+    img:'',
+    author:'',
+    rating:'',
+    price:''
+},
+{
+    id:'26',
+    category:'Buisness',
+    subcategory:'Human Resources',
+    heading:'',
+    img:'',
+    author:'',
+    rating:'',
+    price:''
+},
+
+
+
+
+
+
+
+
+]
