@@ -1,5 +1,6 @@
 import React from 'react'
 import "./TechOnUdemy.css"
+import Footer from "../Footer/Footer"
 const TechOnUdemy = () => {
   return (
     <div>
@@ -91,7 +92,7 @@ const TechOnUdemy = () => {
 
 
 
-
+<Footer/>
     </div>
   )
 }

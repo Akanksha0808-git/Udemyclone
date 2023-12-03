@@ -5,6 +5,9 @@ import Categories from '../Pages/categories/Categories';
 import Navbar from '../Navbar/Navbar';
 import TechOnUdemy from '../Pages/TechOnUdemy';
 import UdemyBuisness from '../Pages/UdemyBuisness';
+import Login from '../LoginSignup/Login';
+import Signup from '../LoginSignup/Signup';
+import Addtocart from '../AddToCart/Addtocart';
 const RouteFiles = () => {
   return (
     <>
@@ -15,6 +18,12 @@ const RouteFiles = () => {
   <Route path="/category" element ={<Categories/>}/>
   <Route path="/techonudemy" element={<TechOnUdemy/>}/>
   <Route path="/udemybuisness" element={<UdemyBuisness/>}/>
+  <Route path="/login" element={<Login/>}/>
+  <Route path="/signup" element={<Signup/>}/>
+  <Route path="/addtocart" element={<Addtocart/>}/>
+
+
+
 
 
 

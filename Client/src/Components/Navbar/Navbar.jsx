@@ -148,6 +148,15 @@ const Navbar = () => {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
   return (
     <>
 
@@ -174,6 +183,7 @@ const Navbar = () => {
             <NavLink to="/category" className={({ isActive }) => (isActive ? 'activeClass' : 'notactiveClass')} onClick={toggleMenu}>
             Categories
             </NavLink>
+            
           </li>
 
           {/* -------searchbar here-------- */}
@@ -193,13 +203,29 @@ const Navbar = () => {
  
   
 
-          <li >
+          {/* <li >
             <div className="mobiles-link">
               <NavLink to="/udemybuisness" className={({ isActive }) => (isActive ? 'activeClass' : 'notactiveClass')}>
               UdemyBuisness
               </NavLink>
             </div>
-          </li>
+          </li> */}
+           <li>
+      <div className="mobiles-link" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <NavLink
+          to="/udemybuisness"
+          className={isHovered ? 'activeClass' : 'notactiveClass'}
+        >
+          UdemyBuisness
+        </NavLink>
+        {isHovered && (
+          <div className="hover-box">
+            <p>Get your team access to over 25,000 top Udemy courses, anytime, anywhere.</p>
+            <button>Try Udemy Business</button>
+          </div>
+        )}
+      </div>
+    </li>
           <li>
             <div className='udemy'>
             <NavLink to="/techonudemy" className={({ isActive }) => (isActive ? 'activeClass' : 'notactiveClass')} onClick={toggleMenu}>
@@ -211,15 +237,16 @@ const Navbar = () => {
         </ul>
        
 {/* <Addtocart/> */}
+<Link to="/addtocart">
 <div className='cart'>
 <div  className={({ isActive }) => (isActive ? 'activeClass' : 'notactiveClass')} onClick={toggleMenu}>
   <img src="https://www.vhv.rs/dpng/d/459-4593681_empty-shopping-cart-shopping-cart-icon-svg-hd.png" alt="img" style={{height:"25px", width:"25px"}} />
 </div>
 </div>
-
-
-        <button className='btnlogin btn'>Login</button>
-        <button className='btnsignup btn'>Signup</button>
+</Link>
+<Link to="/login"> <button className='btnlogin btn' >Login</button></Link>
+       <Link to="/signup"><button className='btnsignup btn' >Signup</button></Link>
+        
          {/* <div className='global' >
           <img src="https://png.pngtree.com/png-clipart/20190520/original/pngtree-vector-globe-icon-png-image_3787753.jpg" alt="I" style={{height:"30px", width:"30px"}} />
          </div> */}

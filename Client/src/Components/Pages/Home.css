@@ -106,6 +106,9 @@ body{
         /* display: flex; */
        
       }
+      .getbtn{
+        width: 100%;
+      }
   }
   .non-students{
     margin-top: 50px;
@@ -159,7 +162,7 @@ padding: 4px;
 .getbtn{
     height: 50px;
     width: 180px;
-    width: 100%;
+    /* width: 100%;  */
     background-color:rgb(74, 68, 68);
     color: #fff;
     font-size: 14px;

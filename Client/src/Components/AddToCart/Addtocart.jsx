@@ -11,9 +11,7 @@ const Addtocart = () => {
 
   return (
     <div>
-   <div className='cart'>
-  <img src="https://www.vhv.rs/dpng/d/459-4593681_empty-shopping-cart-shopping-cart-icon-svg-hd.png" alt="img" style={{height:"25px", width:"25px"}} />
-</div>
+  hi add to cart
     </div>
   
 
