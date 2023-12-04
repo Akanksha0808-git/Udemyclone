@@ -1,56 +1,87 @@
-// import React from 'react'
-
-// const Signup = () => {
-//   return (
-//     <div>
-//       hi Signup
-//     </div>
-//   )
-// }
-
-// export default Signup
 import React, { useState } from 'react';
-import './LoginSignup.css'; // You can create a CSS file for styling
+import axios from "axios";
+import './LoginSignup.css';
+import { Link, useNavigate  } from "react-router-dom";
+import Footer from '../Footer/Footer';
 
 const Signup = () => {
+  const nav = useNavigate();
+
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+  
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+  const [data, setdata] = useState();
+
   const [isChecked, setIsChecked] = useState(false);
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
   };
 
-  const handleSignup = () => {
-    // Handle signup logic here
-    console.log('Signing up...');
-  };
+  // const handleSignup = () => {
+  //   // Handle signup logic here
+  //   console.log('Signing up...');
+  // };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+// const url="https://fignuscart-ly1x.onrender.com/register"
+const url="http://localhost:7000/signup"
+
+    console.log(formData);
+    axios.post(url, formData)
+      .then((res) => {
+        if (res.data.user) {
+          setFormData({
+            name: "",
+            email: "",
+            password: "",
+          });
+          window.alert("user registered succesfully")
+          nav("/login");
+        } else {
+          setdata(res.data.msg);
+        }
+      })
+      .catch((error) => {
+        console.error("Error registering:", error);
+      });
+        
+};
 
   return (
+    <>
     <div className="signup-container">
       <h3>Signup and Start Learning</h3>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="form-group">
           {/* <label htmlFor="fullName">Full Name</label> */}
           <input
             type="text"
             id="fullName"
-            value={fullName}
+            name='name'
             placeholder='Full Name'
-            onChange={(e) => setFullName(e.target.value)}
+            value={formData.name} onChange={handleInputChange} required
           />
         </div>
 
         <div className="form-group">
           {/* <label htmlFor="email">Email</label> */}
           <input
+          name='email'
             type="email"
             id="email"
             placeholder='Email'
-
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={formData.email} onChange={handleInputChange} required
           />
         </div>
 
@@ -59,9 +90,11 @@ const Signup = () => {
           <input
             type="password"
             id="password"
+            name='password'
             placeholder='Password'
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={formData.password}
+            onChange={handleInputChange}
+            required
           />
         </div>
 
@@ -78,7 +111,7 @@ const Signup = () => {
           </label>
         </div>
 
-        <button className='button' type="button" onClick={handleSignup}>
+        <button className='button' type="submit" >
           Sign up
         </button>
       </form>
@@ -89,6 +122,9 @@ const Signup = () => {
 
       <p>Already have an account? <a href="/login">Log in</a></p>
     </div>
+    <Footer/>
+
+    </>
   );
 };
 

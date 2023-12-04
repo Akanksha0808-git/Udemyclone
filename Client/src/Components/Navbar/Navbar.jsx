@@ -107,25 +107,8 @@
 //         <button className='btnsignup btn'>Signup</button>
     
 
-
-
-
-
-
 //        </div>
-
-
-
-
-
-
-//         </div>
-
-
-
-
-
-        
+//         </div>  
 //     </div>
     
 
@@ -136,13 +119,29 @@
 // export default Navbar
 
 import React , { useState }from 'react'
-import { NavLink ,Link} from 'react-router-dom'
+import { NavLink ,Link,useNavigate} from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import Avatar from '@mui/material/Avatar';
+
 import "./Navbar.css";
 
 
 const Navbar = () => {
+  const navi =useNavigate();
+
+  const email = localStorage.getItem("email");
+  const token = localStorage.getItem("token");
+  const handletoken = () => {
+    
+    localStorage.removeItem("token");
+    localStorage.removeItem("userid");
+    localStorage.removeItem("email");
+    
+    navi("/")
+    window.alert("Logout successfully")
+    
+  };
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -217,7 +216,6 @@ const Navbar = () => {
           onMouseLeave={handleUdemyBuisnessMouseLeave}
         >
           <NavLink
-            to="/udemybuisness"
             className={isUdemyBuisnessHovered ? 'activeClass' : 'notactiveClass'}
           >
             UdemyBuisness
@@ -257,14 +255,30 @@ const Navbar = () => {
         </ul>
        
 {/* <Addtocart/> */}
-<Link to="/addtocart">
+{/* <Link to="/addtocart">
 <div className='cart'>
 <div  className={({ isActive }) => (isActive ? 'activeClass' : 'notactiveClass')} onClick={toggleMenu}>
   <img src="https://www.vhv.rs/dpng/d/459-4593681_empty-shopping-cart-shopping-cart-icon-svg-hd.png" alt="img" style={{height:"25px", width:"25px"}} />
 </div>
 </div>
-</Link>
-<Link to="/login"> <button className='btnlogin btn' >Login</button></Link>
+</Link> */}
+<div className="avtar">
+            {
+              email ? (<Avatar className="avtar " style={{ background: "skyblue" }}>{email.split("")[0].toUpperCase()}</Avatar>) : (<Avatar className="avtar " />)
+            }
+          </div>
+{/* <Link to="/login"> <button className='btnlogin btn' >Login</button></Link> */}
+<div className="Sign_In">
+        {token ? (
+  // Display components for authenticated users
+  <>
+    <Link onClick={handletoken } className='btn'>Logout</Link>
+  </>
+) : (
+  // Display components for non-authenticated users
+  <Link to={"/login"} className='btn'>SignIn</Link>
+)}
+        </div>
        <Link to="/signup"><button className='btnsignup btn' >Signup</button></Link>
         
          {/* <div className='global' >

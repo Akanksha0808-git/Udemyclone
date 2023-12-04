@@ -1,4 +1,4 @@
-const Courses = require("../model/productSchema")
+const Courses = require("../model/courseSchema")
 // const data=require("../Data")
 
 

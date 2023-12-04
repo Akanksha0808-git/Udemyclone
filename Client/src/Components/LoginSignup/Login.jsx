@@ -1,104 +1,21 @@
-// import React, { useState } from 'react';
-// import './LoginSignup.css'; // You can create a CSS file for styling
-// import { FaEye, FaEyeSlash } from 'react-icons/fa';
-
-// const Signup = () => {
-//   const [fullName, setFullName] = useState('');
-//   const [email, setEmail] = useState('');
-//   const [password, setPassword] = useState('');
-//   const [isChecked, setIsChecked] = useState(false);
-//   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
-
-//   const handleCheckboxChange = () => {
-//     setIsChecked(!isChecked);
-//   };
-
-//   const handlePasswordVisibilityToggle = () => {
-//     setIsPasswordVisible(!isPasswordVisible);
-//   };
-
-//   const handleSignup = () => {
-//     // Handle signup logic here
-//     console.log('Signing up...');
-//   };
-
-//   return (
-//     <div className="signup-container">
-//       <h3>Log in to your Udemy Account</h3>
-//       <form>
-//         <div className="form-group">
-//           <label htmlFor="fullName">Full Name</label>
-//           <input
-//             type="text"
-//             pla
-//             id="fullName"
-//             value={fullName}
-//             onChange={(e) => setFullName(e.target.value)}
-//           />
-//         </div>
-
-//         <div className="form-group">
-//           <label htmlFor="email">Email</label>
-//           <input
-//             type="email"
-//             id="email"
-//             value={email}
-//             onChange={(e) => setEmail(e.target.value)}
-//           />
-//         </div>
-
-//         <div className="form-group">
-//           <label htmlFor="password">Password</label>
-//           <div className="password-input-container">
-//             <input
-//               type={isPasswordVisible ? 'text' : 'password'}
-//               id="password"
-//               value={password}
-//               onChange={(e) => setPassword(e.target.value)}
-//             />
-//             {isPasswordVisible ? (
-//               <FaEyeSlash onClick={handlePasswordVisibilityToggle} />
-//             ) : (
-//               <FaEye onClick={handlePasswordVisibilityToggle} />
-//             )}
-//           </div>
-//         </div>
-
-//         <div className="checkbox-group">
-//           <input
-//             type="checkbox"
-//             id="subscribe"
-//             checked={isChecked}
-//             onChange={handleCheckboxChange}
-//           />
-//           <label htmlFor="subscribe">
-//             Send me special offers, personalized recommendations, and learning tips
-//           </label>
-//         </div>
-
-//         <button className="button" type="button" onClick={handleSignup}>
-//           Sign up
-//         </button>
-//       </form>
-
-//       <p>By Signing up, you agree to our Terms of Use and Privacy Policy</p>
-
-//       <hr />
-
-//       <p>
-//         Already have an account? <a href="/login">Log in</a>
-//       </p>
-//     </div>
-//   );
-// };
-
-// export default Signup;
 import React, { useState } from 'react';
-// import {Link} from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios"
+
 import './LoginSignup.css'; // You can create a CSS file for styling
 import { FaGoogle, FaFacebook, FaApple } from 'react-icons/fa'; // Import icons from react-icons library
+import Footer from '../Footer/Footer';
+import {  toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 const Login = () => {
+  const Navi = useNavigate();
+  const [formData, setFormData] = useState({
+    email:"",
+    password: "",
+  });
+  const [data, setdata] = useState();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -111,8 +28,46 @@ const Login = () => {
     // Handle forgot password logic here
     console.log('Forgot password...');
   };
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const url = "http://localhost:7000/login";
+  
+   
+    axios.post(url, formData)
+      .then((response) => {
+        console.log(response.data);
+        if (response.data.user) {
+          const email = response.data.user[0];
+          const token = response.data.token;
+          const usersid = response.data.userid;
+  
+          // Set tokens in localStorage
+          localStorage.setItem("token", token);
+          localStorage.setItem("userid", usersid);
+          localStorage.setItem("email", email);
+          window.alert("login Successfully")
+          Navi("/"); 
 
+        
+          
+          
+        } else {
+          setdata(response.data.msg);
+        }
+      })
+      .catch((error) => {
+        console.error("Error logging in:", error.message);
+        toast.error(`Error: ${error.message}`, {
+          position: "top-center",
+        });
+      });
+  };
   return (
+    <>
     <div className="login-container">
       <h3>Log in to your Udemy account</h3>
       <div className="social-login">
@@ -132,30 +87,35 @@ const Login = () => {
         </div>
       </div>
 
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="form-group">
           {/* <label htmlFor="email">Email</label> */}
           <input
+          name='email'
             type="email"
             id="email"
             placeholder='Email'
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={formData.email}
+            onChange={handleInputChange}
+            required
           />
         </div>
 
         <div className="form-group">
           {/* <label htmlFor="password">Password</label> */}
           <input
+          name='password'
             type="password"
+            value={formData.password}
             id="password"
             placeholder='Password'
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+        
+            onChange={handleInputChange}
+            required
           />
         </div>
 
-        <button className='button' type="button" onClick={handleLogin}>
+        <button className='button' type="submit" >
           Log in
         </button>
       </form>
@@ -170,6 +130,9 @@ const Login = () => {
         Don't have an account? <a href="/signup">Signup</a>
       </p>
     </div>
+    <Footer/>
+
+    </>
   );
 };
 
