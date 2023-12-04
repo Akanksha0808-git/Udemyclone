@@ -255,28 +255,28 @@ const Navbar = () => {
         </ul>
        
 {/* <Addtocart/> */}
-{/* <Link to="/addtocart">
+<Link to="/addtocart">
 <div className='cart'>
 <div  className={({ isActive }) => (isActive ? 'activeClass' : 'notactiveClass')} onClick={toggleMenu}>
   <img src="https://www.vhv.rs/dpng/d/459-4593681_empty-shopping-cart-shopping-cart-icon-svg-hd.png" alt="img" style={{height:"25px", width:"25px"}} />
 </div>
 </div>
-</Link> */}
+</Link>
 <div className="avtar">
             {
               email ? (<Avatar className="avtar " style={{ background: "skyblue" }}>{email.split("")[0].toUpperCase()}</Avatar>) : (<Avatar className="avtar " />)
             }
           </div>
-{/* <Link to="/login"> <button className='btnlogin btn' >Login</button></Link> */}
+
 <div className="Sign_In">
         {token ? (
-  // Display components for authenticated users
+
   <>
-    <Link onClick={handletoken } className='btn'>Logout</Link>
+    <Link onClick={handletoken } ><button className='btnlogin btn' >Logout</button></Link>
   </>
 ) : (
-  // Display components for non-authenticated users
-  <Link to={"/login"} className='btn'>SignIn</Link>
+ 
+  <Link to={"/login"} ><button className='btnlogin btn' >Login</button></Link>
 )}
         </div>
        <Link to="/signup"><button className='btnsignup btn' >Signup</button></Link>

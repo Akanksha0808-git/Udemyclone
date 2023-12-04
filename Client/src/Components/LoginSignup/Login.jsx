@@ -130,7 +130,7 @@ const Login = () => {
         Don't have an account? <a href="/signup">Signup</a>
       </p>
     </div>
-    <Footer/>
+      <Footer/>
 
     </>
   );

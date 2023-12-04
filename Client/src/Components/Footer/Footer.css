@@ -1,45 +1,9 @@
-/* .footer-container{
-    background-color: black;
-    width: 100%;
-    color: white;
-}
-.footer-container1{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-.footer-containerleft-1{
-    width: 60%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-.footer-containerleft-1 ul li{
-    list-style: none;
-
-}
-
-.footer-container2{
-    display: flex;
-    justify-content: space-between;
-}
-
-@media (max-width: 700px){
-    .footer-container1{
-        flex-direction: column;
-    }
-    .footer-container2{
-        flex-direction: column;
-    }
-    .footer-containerleft-1{
-        flex-direction: column;
-    }
-
-} */
+/* 
 
 .footer-container {
+     
     background-color: black;
-    /* width: 100%; */
+    width: 100%;
     color: white;
     padding: 20px;
 }
@@ -89,4 +53,65 @@
     .footer-container{
         width: 100%;
     }
-}
+} */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+  }
+  
+  .footer-container {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    margin-top: auto; /* Push the footer to the bottom */
+  }
+  
+  .footer-container1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .footer-containerleft-1 {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .footer-containerleft-1 ul li {
+    list-style: none;
+  }
+  
+  .footer-container2 {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  @media (max-width: 700px) {
+    .footer-container1 {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .footer-containerleft-1 {
+      flex-direction: column;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    .footer-container2 {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 475px) {
+    .footer-container {
+      width: 100%;
+    }
+  }
+  
