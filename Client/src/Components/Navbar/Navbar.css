@@ -183,18 +183,42 @@
     z-index: 2000;
     position: relative;
   }
-  
-  .hover-box {
-    position: absolute;
-    top:70px; /* Position the box below the link */
-    left: 0;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
-    padding: 10px;
-    width: 250px; /* Adjust the width as needed */
+  .udemy{
+    z-index: 2000;
+    position: relative;
   }
   
+  .hover-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    flex-direction: column;
+    top:50px; 
+    left: 0;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    padding: 10px;
+    width: 250px;
+  }
+  .hover-box2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    flex-direction: column;
+    top:50px; 
+    left: 0;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    padding: 10px;
+    width: 250px;
+  }
+ 
+ 
+  
   .try-button {
+   width: 100%;
     background-color: black;
     color: white;
     padding: 8px 16px;
@@ -203,6 +227,7 @@
     font-size: 14px;
     border-radius: 4px;
   }
+ 
   
   /* Add any other styles for activeClass and notactiveClass as needed */
   

@@ -29,33 +29,37 @@ const Signup = () => {
 
   return (
     <div className="signup-container">
-      <h2>Signup and Start Learning</h2>
+      <h3>Signup and Start Learning</h3>
       <form>
         <div className="form-group">
-          <label htmlFor="fullName">Full Name</label>
+          {/* <label htmlFor="fullName">Full Name</label> */}
           <input
             type="text"
             id="fullName"
             value={fullName}
+            placeholder='Full Name'
             onChange={(e) => setFullName(e.target.value)}
           />
         </div>
 
         <div className="form-group">
-          <label htmlFor="email">Email</label>
+          {/* <label htmlFor="email">Email</label> */}
           <input
             type="email"
             id="email"
+            placeholder='Email'
+
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
 
         <div className="form-group">
-          <label htmlFor="password">Password</label>
+          {/* <label htmlFor="password">Password</label> */}
           <input
             type="password"
             id="password"
+            placeholder='Password'
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
@@ -65,11 +69,12 @@ const Signup = () => {
           <input
             type="checkbox"
             id="subscribe"
+            className='checkbox'
             checked={isChecked}
             onChange={handleCheckboxChange}
           />
           <label htmlFor="subscribe">
-            Send me special offers, personalized recommendations, and learning tips
+            Send me special offers, personalized <br /> recommendations, and learning tips.
           </label>
         </div>
 

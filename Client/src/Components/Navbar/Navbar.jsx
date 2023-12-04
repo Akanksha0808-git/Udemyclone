@@ -148,15 +148,25 @@ const Navbar = () => {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
-  const [isHovered, setIsHovered] = useState(false);
+  const [isUdemyBuisnessHovered, setIsUdemyBuisnessHovered] = useState(false);
+  const [isTeachOnUdemyHovered, setIsTeachOnUdemyHovered] = useState(false);
 
-  const handleMouseEnter = () => {
-    setIsHovered(true);
+  const handleUdemyBuisnessMouseEnter = () => {
+    setIsUdemyBuisnessHovered(true);
   };
 
-  const handleMouseLeave = () => {
-    setIsHovered(false);
+  const handleUdemyBuisnessMouseLeave = () => {
+    setIsUdemyBuisnessHovered(false);
   };
+
+  const handleTeachOnUdemyMouseEnter = () => {
+    setIsTeachOnUdemyHovered(true);
+  };
+
+  const handleTeachOnUdemyMouseLeave = () => {
+    setIsTeachOnUdemyHovered(false);
+  };
+
   return (
     <>
 
@@ -200,39 +210,49 @@ const Navbar = () => {
       </form>
     </div>
     </li>
- 
-  
-
-          {/* <li >
-            <div className="mobiles-link">
-              <NavLink to="/udemybuisness" className={({ isActive }) => (isActive ? 'activeClass' : 'notactiveClass')}>
-              UdemyBuisness
-              </NavLink>
-            </div>
-          </li> */}
-           <li>
-      <div className="mobiles-link" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-        <NavLink
-          to="/udemybuisness"
-          className={isHovered ? 'activeClass' : 'notactiveClass'}
+    <li>
+        <div
+          className="mobiles-link"
+          onMouseEnter={handleUdemyBuisnessMouseEnter}
+          onMouseLeave={handleUdemyBuisnessMouseLeave}
         >
-          UdemyBuisness
-        </NavLink>
-        {isHovered && (
-          <div className="hover-box">
-            <p>Get your team access to over 25,000 top Udemy courses, anytime, anywhere.</p>
-            <button>Try Udemy Business</button>
-          </div>
-        )}
-      </div>
-    </li>
-          <li>
-            <div className='udemy'>
-            <NavLink to="/techonudemy" className={({ isActive }) => (isActive ? 'activeClass' : 'notactiveClass')} onClick={toggleMenu}>
-            Teach on Udemy
-            </NavLink>
+          <NavLink
+            to="/udemybuisness"
+            className={isUdemyBuisnessHovered ? 'activeClass' : 'notactiveClass'}
+          >
+            UdemyBuisness
+          </NavLink>
+          {isUdemyBuisnessHovered && (
+            <div className="hover-box">
+              <p>Get your team access to over 25,000 top Udemy courses, anytime, anywhere.</p>
+              <button className='try-button'>Try Udemy Business</button>
             </div>
-          </li>
+          )}
+        </div>
+      </li>
+
+      <li>
+        <div
+          className='udemy'
+          onMouseEnter={handleTeachOnUdemyMouseEnter}
+          onMouseLeave={handleTeachOnUdemyMouseLeave}
+        >
+          <NavLink
+            to="/techonudemy"
+            className={isTeachOnUdemyHovered ? 'activeClass' : 'notactiveClass'}
+          >
+            Teach on Udemy
+          </NavLink>
+          {isTeachOnUdemyHovered && (
+            <div className="hover-box">
+              <p>Unlock your earning potential. Reach millions of students worldwide.</p>
+              <button className='try-button'>Learn More</button>
+            </div>
+          )}
+        </div>
+      </li>
+            
+     
 
         </ul>
        

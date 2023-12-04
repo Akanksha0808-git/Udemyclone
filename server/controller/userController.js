@@ -7,10 +7,10 @@ const secretkey="#@$%^&*"
 const bcrypt = require("bcrypt")
 
 
-const Register = async(req, res) => {
+const  Signup = async(req, res) => {
 
 try{
-    const {name , email ,phone, password} = req.body;
+    const {name , email , password} = req.body;
     const founduser = await User.findOne({email});
     
     if (founduser) {
@@ -23,7 +23,6 @@ try{
     //creating user 
     const temp = await User.create( {
       name:name,
-      phone:phone,
       email: email,
       password: hashpassword,
     });
@@ -69,42 +68,42 @@ const login = async(req, res) => {
     })
 }
 
-const searchcourses = async (req, res) => {
+// const searchcourses = async (req, res) => {
   
-    try {
-        const search = req.body.search;
-        console.log(search)
-        const searching = await Courses.find({
-          $or: [
-            { heading: { $regex: new RegExp(search, "i") } },
-            { details: { $regex: new RegExp(search, "i") } },
-            { category: { $regex: new RegExp(search, "i") } },
-            // Add more fields as needed
-          ],
-        })
+//     try {
+//         const search = req.body.search;
+//         console.log(search)
+//         const searching = await Courses.find({
+//           $or: [
+//             { heading: { $regex: new RegExp(search, "i") } },
+//             { details: { $regex: new RegExp(search, "i") } },
+//             { category: { $regex: new RegExp(search, "i") } },
+//             // Add more fields as needed
+//           ],
+//         })
     
-        if (searching.length > 0) {
-          return res.status(200).json({
-            success: true,
-            msg: "Courses Details",
-            data: searching,
-          });
-        } else {
-          return res.status(404).json({ msg: "No matching Courses found" });
-        }
-      } catch (err) {
-        console.log(err.message);
-        return res.status(500).json({
-          msg: "Internal Server Error",
-          error: err.message,
-        });
-      }
+//         if (searching.length > 0) {
+//           return res.status(200).json({
+//             success: true,
+//             msg: "Courses Details",
+//             data: searching,
+//           });
+//         } else {
+//           return res.status(404).json({ msg: "No matching Courses found" });
+//         }
+//       } catch (err) {
+//         console.log(err.message);
+//         return res.status(500).json({
+//           msg: "Internal Server Error",
+//           error: err.message,
+//         });
+//       }
     
-  };
+//   };
   
 
 
-module.exports = { Register, login,dashboard,searchcourses };
+module.exports = { Signup, login,dashboard,searchcourses };
 
 
 
