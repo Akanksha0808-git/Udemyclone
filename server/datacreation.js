@@ -1,10 +1,10 @@
-const courseData = require('./Data');
+const coursesdata= require('./Data')
 const Courses  = require('./model/courseSchema');
 
 const defaultData = async()=>{
     try{
         await Courses.deleteMany({})
-        const storeData = await Courses.insertMany(courseData);
+        const storeData = await Courses.insertMany(coursesdata);
     }catch(err){
         console.log(`Error is found inserting Data ${err}`);
     }

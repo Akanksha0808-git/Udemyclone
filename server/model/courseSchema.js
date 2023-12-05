@@ -3,12 +3,14 @@ const mongoose = require("mongoose");
 const courseSchema = new mongoose.Schema({
   id: Number,
   category: String,
-  subCategory: String,
+  subcategory: String,
   heading: String,
+  des:String,
   image:String,
- author : String,
-  price: String,
+  author : String,
   rating: String,
+  price: String,
+
 });
 
 

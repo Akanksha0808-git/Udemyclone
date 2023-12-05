@@ -1,7 +1,6 @@
 const CloudURL="mongodb+srv://akanksharma0829:mycarrer@cluster0.fdcy9xi.mongodb.net/MyUdemyClone?retryWrites=true&w=majority"
 
 const mongoose=require("mongoose")
-mongoose.set("strictQuery",true)
 const connection =async ()=>{
     try{
      await mongoose.connect(CloudURL)

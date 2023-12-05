@@ -34,8 +34,8 @@ const Signup = () => {
   // };
   const handleSubmit = (e) => {
     e.preventDefault();
-// const url="https://fignuscart-ly1x.onrender.com/register"
-const url="http://localhost:7000/signup"
+const url="https://udemyclone-rx0k.onrender.com/signup"
+// const url="http://localhost:7000/signup"
 
     console.log(formData);
     axios.post(url, formData)
