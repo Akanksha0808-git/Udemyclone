@@ -1,0 +1,685 @@
+*{
+    cursor: pointer;
+}
+:root{
+    --hovergrey : rgb(241, 241, 241);
+}
+.navCourse{
+    display: flex;
+    background-color: white;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    height: 48.8px;
+    padding-left: 30px;
+    gap: 50px;
+    cursor: pointer;
+    margin-bottom: 1px;
+}
+.navCourse h3{
+    font-size: 16px;
+}
+.navCourse span{
+    width: 34px;
+    height: 34px;
+    border: 1px solid rgb(199, 199, 199);
+    border-left: 0;
+    border-top: 0;
+    transform: rotate(320deg);
+    margin-left: -30px;
+}
+.courseComp-flex{
+    display: flex;
+    gap: 50px;
+}
+.courseComp-flex p{
+    font-size: 15px;
+    color: rgb(90, 90, 90);
+} 
+
+/* main parent container */
+.main-outter-parent-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 100%;
+}
+
+/* content */ 
+
+.course-heading{
+    margin: 40px 0 0 0;
+}
+.contant-comp{
+    width: 85%;
+}
+.contant-comp h2{
+    margin: 50px 0 20px 0;
+}
+
+/* most popular */
+/* .popularTopics{
+    width: fit-content;
+} */
+/* .popularhead{
+    border-bottom: 1px solid gray;
+} */
+/* .mpopular {
+    font-weight: 500;
+    border-bottom: 2px solid;
+    width: fit-content;
+    padding-bottom: 4px;
+} */
+
+/* card */
+.card-conatiner{
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 20px;
+    width: fit-content;
+}
+.cardmain{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 5px 0;
+    width: 240px;
+    position: relative;
+}
+.cardmain img{
+    width: 240px;
+    height: 135px;
+}
+/* hover template */
+
+.hovertemplate{
+    display: none;
+    position: absolute;
+    background-color: white;
+    left:50px;
+    bottom: 50px;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    padding: 20px 8px 0;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.hovertemplate h3{
+    height: 66px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.hovertemplate p{
+    margin-top: 10px;
+    height: 7rem;
+    line-height: 30px;
+    font-weight: 500;
+}
+.addtocartbtn{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    background-color: #a435f0;
+    height: 40px;
+    color: white;
+}
+.hovertemplate span{
+    font-size: small;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(160, 160, 160);
+}
+.cardmain:hover .hovertemplate{
+    display: block;
+    /* z-index: 2; */
+}
+
+
+/* main card hover template */
+
+.maincardhovertemplate{
+    display: none;
+    position: absolute;
+    background-color: white;
+    left:150px;
+    bottom: 50px;
+    width: 80%;
+    height: 100%;
+    z-index: 2;
+    padding: 20px 8px 0;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.maincardhovertemplate h3{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.maincardhovertemplate p{
+    line-height: 25px;
+    font-weight: 500;
+}
+.mainaddtocartbtn{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    background-color: #a435f0;
+    height: 40px;
+    color: white;
+    cursor: pointer;
+}
+.mainaddtocartbtn:hover{
+    background-color: #812db9;
+}
+.maincardhovertemplate span{
+    font-size: small;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(160, 160, 160);
+}
+.maincontentcard:hover .maincardhovertemplate{
+    display: block;
+}
+
+/* popular topics */
+.popularTopics{
+    display: flex;
+    flex-wrap: wrap;
+    gap:20px;
+    width: 100%;
+}
+.pt-inner{
+    border: 1px solid;
+    padding: 8px 19px;
+    width: 200px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.pt-inner p{
+    font-weight: 700;
+}
+
+.pt-inner:hover{
+    background-color: var(--hovergrey);
+}
+
+/* popular instructor */
+
+.popular-inst{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 10px;
+}
+.inst-inner{
+    display: flex;
+    border: 1px solid rgb(196, 196, 196);
+    gap: 0 10px;
+    width: fit-content;
+    padding: 12px 8.2px;
+}
+.inst-inner img{
+    height: 60px;
+    border-radius: 3rem;
+}
+.inst-row{
+    width: 14rem;
+    line-height: 25px;
+}
+.p1{
+    font-size: 14px;
+}
+.p2{
+    font-size: 12px;
+}
+.p2 span{
+    font-size: 15px;
+    font-weight: 700;
+}
+.inst-row h4{
+    font-size: 15px;
+}
+.inst-row h4 span{
+    font-weight: 100;
+    font-size: 13px;
+}
+
+.inst-inner:hover{
+    background-color: var(--hovergrey);
+}
+
+/* info */
+.info{
+    display: flex;
+    border: 1px solid rgb(164, 164, 164);
+    padding: 15px 20px;
+    align-items: center;
+    gap: 0 10px;
+    width: 100%;
+}
+.info h3{
+    font-size: 20px;
+}
+.infoicon{
+    font-size: xx-large;
+}
+
+
+/* filter */
+
+.filterstatic{
+    display: flex;
+    gap: 0 10px;
+    margin: 10px 0 30px 0;
+    cursor: pointer;
+}
+.filterbtn{
+    border: 1px solid;
+    width: 6.5rem;
+    display: flex;
+    align-items: center;
+    place-content: center;
+    font-size: larger;
+    gap: 0 8px;
+}
+.filterbtn:hover{
+    background-color: rgb(236, 236, 236);
+}
+.sort{
+    display: flex;
+    gap: 0 30px;
+    border: 1px solid;
+    padding: 10px 12px;
+}
+.sort:hover{
+    background-color: rgb(236, 236, 236);
+}
+.inner-sort span{
+    font-size: 12px;
+}
+.arrowdown{
+    position: relative;
+    top: 20px;
+}
+
+/* rating */
+.rating{
+    font-size: 19px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px 0;
+    border-top: 1px solid rgb(195, 195, 195);
+    padding-top: 20px;
+    width: 28%;
+}
+.ratingspan{
+    font-size: 15px;
+    line-height: 30px;
+}
+
+.mainContentParent{
+    display: flex;
+    gap: 0 10px;
+    /* justify-content: space-evenly; */
+    line-height: 25px;
+    width: 100%;
+}
+.maincontentsection{
+    width: 100%;
+}
+.maincontentcard{
+    display: flex;
+    gap: 0 10px;
+    margin-bottom: 50px;
+    border-top: 1px solid rgb(208, 208, 208);
+    padding-top: 20px;
+    position: relative;
+}
+.maincontentcard img{
+    width: 25%;
+}
+.mainauthor{
+    font-size: 13px;
+}
+.maincourseDesc{
+    font-size: 13px;
+    width: 100%;
+}
+.maincontentimg{
+    /* width: 62rem; */
+    width: 100%;
+}
+
+@media (max-width:756px){
+    .navCourse{
+        display: none;
+    }
+    
+    /* main parent container */
+    .main-outter-parent-container{
+        width: 100%;
+    }
+    
+    /* content */ 
+    
+    .course-heading{
+        margin: 40px 0 0 0;
+        width: 100%;
+        font-size: x-large;
+    }
+    .contant-comp{
+        width: 85%;
+    }
+    .contant-comp h2{
+        margin: 30px 0 18px 0;
+        font-size: large;
+    }
+    
+    
+    /* card */
+    .card-conatiner{
+        margin-top: 18px;
+        justify-content: center;
+        gap: 28px 0px;
+        width: 100%;
+    }
+    .cardmain{
+        gap: 3px 0;
+        width: 100%;
+    }
+    .cardmain img{
+        width: 100%;
+        height: 140px;
+    }
+    /* hover template */
+    
+    .hovertemplate{
+        left:0px;
+        bottom: 50px;
+        width: 100%;
+        height: auto;
+        padding: 20px 5px 0;
+    }
+    .hovertemplate h3{
+        height: 55px;
+    }
+    .hovertemplate p{
+        margin-top: 8px;
+        height: 6rem;
+        line-height: 28px;
+    }
+    
+    
+    /* main card hover template */
+    
+    .maincardhovertemplate{
+        left:0px;
+        bottom: 50px;
+        width: 100%;
+        height: 60%;
+        padding: 20px 8px 0;
+    }
+    .maincardhovertemplate p{
+        height: 120px;
+    }
+    .mainaddtocartbtn{
+        margin-top: 00px;
+        display: flex;
+        width: 100%;
+        cursor: pointer;
+    }
+    
+    /* popular topics */
+    .popularTopics{
+        gap:20px 0;
+    }
+    .pt-inner{
+        width: 100%;
+    }
+    .pt-inner p{
+        font-weight: 600;
+    }
+    
+    /* popular instructor */
+    
+    .popular-inst{
+        gap: 10px 0;
+    }
+    .inst-inner{
+        gap: 10px 10px;
+        width: 100%;
+        padding: 8px 8.2px;
+    }
+    .inst-inner img{
+        height: 50px;
+    }
+    .inst-row{
+        width: 100%;
+        line-height: 23px;
+    }
+    .p1{
+        font-size: 12px;
+    }
+    .p2{
+        font-size: 10px;
+    }
+    .p2 span{
+        font-size: 13px;
+        font-weight: 600;
+    }
+    .inst-row h4{
+        font-size: 13px;
+    }
+    .inst-row h4 span{
+        font-size: 13px;
+    }
+    
+    
+    /* info */
+    .info{
+        padding: 15px 0 15px 5px ;
+        gap: 0 10px;
+        width: 100%;
+    }
+    .info h3{
+        font-size: 18px;
+    }
+    .infoicon{
+        font-size: xx-large;
+    }
+    
+    
+    /* filter */
+    
+    .filterstatic{
+        gap: 0 8px;
+        margin: 10px 0 25px 0;
+    }
+    .filterbtn{
+        border: 1px solid;
+        width: 6.5rem;
+        font-size: larger;
+        gap: 0 8px;
+        height: 50px;
+    }
+    .sort{
+        padding: 2px 5px;
+    }
+    .inner-sort span{
+        font-size: 12px;
+    }
+    
+    /* rating */
+    .rating{
+        display: none;
+    }
+
+    .mainContentParent{
+        display: flex;
+        gap: 0;
+        /* justify-content: space-evenly; */
+        line-height: 25px;
+        width: 100%;
+    }
+    .maincontentsection{
+        width: 100%;
+    }
+    .maincontentcard{
+        display: flex;
+        flex-direction: column;
+        gap: 10px 0;
+        margin-bottom: 8px;
+    }
+    .maincontentcard img{
+        width: 100%;
+    }
+    .mainauthor{
+        font-size: 13px;
+    }
+
+}
+
+@media (min-width:756px) and (max-width:1024px){
+    .navCourse{
+        height: 50px;
+        padding-left: 20px;
+        gap: 20px;
+    }
+    .navCourse h3{
+        font-size: 16px;
+    }
+    .courseComp-flex{
+        display: flex;
+        gap: 0px 16px;
+    }
+    .courseComp-flex p{
+        font-size: 14px;
+        color: rgb(90, 90, 90);
+    } 
+    
+    /* main parent container */
+    .main-outter-parent-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        width: 100%;
+    }
+    
+    /* content */ 
+    
+    
+    /* card */
+    .card-conatiner{
+        justify-content: space-between;
+    }
+    .cardmain{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 5px 0;
+        width: 240px;
+        position: relative;
+    }
+    /* hover template */
+    
+    .hovertemplate{
+        display: none;
+        position: absolute;
+        background-color: white;
+        left:50px;
+        bottom: 50px;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        padding: 20px 8px 0;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+    .hovertemplate h3{
+        height: 66px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    .hovertemplate p{
+        margin-top: 10px;
+        height: 7rem;
+        line-height: 30px;
+        font-weight: 500;
+    }
+    .addtocartbtn{
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+        background-color: #a435f0;
+        height: 40px;
+        color: white;
+        cursor: pointer;
+    }
+    .hovertemplate span{
+        font-size: small;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: rgb(160, 160, 160);
+    }
+    .cardmain:hover .hovertemplate{
+        display: block;
+        /* z-index: 2; */
+    }
+    
+    
+    /* main card hover template */
+    
+    .maincardhovertemplate{
+        left:80px;
+    }
+    .maincardhovertemplate p{
+        line-height: 35px;
+        height: 100px;
+    }
+    .mainaddtocartbtn{
+        margin-top: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+        background-color: #a435f0;
+        height: 40px;
+        color: white;
+        cursor: pointer;
+    }
+    .mainaddtocartbtn:hover{
+        background-color: #812db9;
+        cursor: pointer;
+    }
+    .maincardhovertemplate span{
+        font-size: small;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: rgb(160, 160, 160);
+    }
+    .maincontentcard:hover .maincardhovertemplate{
+        display: block;
+    }
+    
+    /* popular topics */
+    .popularTopics{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap:20px;
+        width: 100%;
+    }
+    .rating{
+        display: none;
+    }
+}

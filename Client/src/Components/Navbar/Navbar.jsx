@@ -330,13 +330,17 @@ const Navbar = () => {
                 {
                   token ?
                   <div className='sidebarloginsection'>
-                    <p className='sidelogo'>{email}</p>
+                     <div className="avtar">
+            {
+              email ? (<Avatar className="avtar " style={{ background: "skyblue" }}>{email.split("")[0].toUpperCase()}</Avatar>) : (<Avatar className="avtar " />)
+            }
+          </div>
                     <div className='sidebarloginsection1'>
                       <p className='sidelogoName'>{name}</p>
                       <p>{`${email.slice(0,15)}`}</p>
                       <div className='sidelogout'>
-                      <p onClick={logout}>Log Out</p>
-                      <p className='' onClick={()=>{Nav("/mylearning"),handleclick()}}>My Learning</p>
+                      <p onClick={handletoken}>Log Out</p>
+                      <p className='' onClick={()=>{navi("/mylearning"),handleclick()}}>My Learning</p>
                       </div>
                     </div>
                   </div>
