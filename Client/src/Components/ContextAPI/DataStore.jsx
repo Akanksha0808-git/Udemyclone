@@ -2,7 +2,8 @@ import React, { createContext, useState, useEffect } from 'react'
 import axios from "axios";
 export const Store = createContext();
 import "./lazyloader.css"
-const url = "http://localhost:4000/data"
+// const url = "http://localhost:4000/data"
+const url="https://udemyclone-rx0k.onrender.com/data"
 function DataStore(props) {
     const [loading, setLoading] = useState(true);
     

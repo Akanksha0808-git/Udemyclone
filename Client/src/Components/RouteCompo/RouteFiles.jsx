@@ -8,6 +8,7 @@ import UdemyBuisness from '../Pages/UdemyBuisness';
 import Login from '../LoginSignup/Login';
 import Signup from '../LoginSignup/Signup';
 import Addtocart from '../AddToCart/Addtocart';
+// import CourseComp from '../GenericCompo/CourseCompo';
 const RouteFiles = () => {
   return (
     <>
@@ -16,6 +17,7 @@ const RouteFiles = () => {
       <Routes>
     <Route path="/" element={<Home/>}/>
   <Route path="/category" element ={<Categories/>}/>
+  {/* <Route path='/course/:category' element={<CourseComp/>} /> */}
   <Route path="/techonudemy" element={<TechOnUdemy/>}/>
   <Route path="/udemybuisness" element={<UdemyBuisness/>}/>
   <Route path="/login" element={<Login/>}/>

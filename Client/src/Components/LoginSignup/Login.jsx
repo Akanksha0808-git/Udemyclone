@@ -5,7 +5,7 @@ import axios from "axios"
 import './LoginSignup.css'; // You can create a CSS file for styling
 import { FaGoogle, FaFacebook, FaApple } from 'react-icons/fa'; // Import icons from react-icons library
 import Footer from '../Footer/Footer';
-import {  toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 
@@ -13,6 +13,7 @@ const Login = () => {
   const Navi = useNavigate();
   const [formData, setFormData] = useState({
     email:"",
+    name:"",
     password: "",
   });
   const [data, setdata] = useState();
@@ -44,6 +45,7 @@ const url="https://udemyclone-rx0k.onrender.com/login"
         console.log(response.data);
         if (response.data.user) {
           const email = response.data.user[0];
+          // const name=response.data.user;
           const token = response.data.token;
           const usersid = response.data.userid;
   
@@ -51,14 +53,16 @@ const url="https://udemyclone-rx0k.onrender.com/login"
           localStorage.setItem("token", token);
           localStorage.setItem("userid", usersid);
           localStorage.setItem("email", email);
-          window.alert("login Successfully")
+          toast.success("Login Successfully")
+          // window.alert("login Successfully")
           Navi("/"); 
 
         
           
           
         } else {
-          setdata(response.data.msg);
+          toast.warn(response.data.msg)
+          // setdata(response.data.msg);
         }
       })
       .catch((error) => {
@@ -73,7 +77,7 @@ const url="https://udemyclone-rx0k.onrender.com/login"
     <div className="login-container">
       <h3>Log in to your Udemy account</h3>
       <div className="social-login">
-        <div className="social-button" onClick={() => console.log('Google login')}>
+        <div className="social-button" >
          <FaGoogle />
           <span>Continue with Google</span>
         </div>
@@ -132,8 +136,9 @@ const url="https://udemyclone-rx0k.onrender.com/login"
         Don't have an account? <a href="/signup">Signup</a>
       </p>
     </div>
-      <Footer/>
+<ToastContainer/>
 
+      <Footer/>
     </>
   );
 };

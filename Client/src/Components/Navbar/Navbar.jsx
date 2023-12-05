@@ -1,137 +1,66 @@
-// import React , { useState }from 'react'
-// import { NavLink ,Link} from 'react-router-dom'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faSearch } from '@fortawesome/free-solid-svg-icons';
-
-// // import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-// // import { IoCartOutline } from "react-icons/io5";
-// // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// // import { faCartShopping } from '@fortawesome/free-regular-svg-icons';
-// // import '@fortawesome/fontawesome-svg-core/styles.css'; // Import the styles
-
-// import "./Navbar.css"
-// import Searchbar from './Searchbar'
-// import Addtocart from '../AddToCart/Addtocart'
-// // import Addtocart from '../AddToCart/Addtocart'
-
-// const Navbar = () => {
-//   const [menuOpen, setMenuOpen] = useState(false);
-
-//   const toggleMenu = () => {
-//     setMenuOpen(!menuOpen);
-//   };
-//   return (
-//     <>
-
-//     <div className="navbar" >
-  
-//     <div className="logog">
-// <Link to='/'>
-// <img src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg" alt="Udemy" width="91" height="34" loading="lazy"></img>
-// </Link>
-//         </div>
-//         {/* <div className='menubox'>
-      
-//   <NavLink to="/category">Categories</NavLink>
-  
-// <Searchbar/>
-//   <NavLink to="/udemybuisness">UdemyBuisness</NavLink>
-  
-
-//   <NavLink to="/techonudemy">Teach On Udemy</NavLink>
-
-//   </div> */}
-//   <div className='outerbox'>
-// <div className='hamburgerBox'>
-//         <div className={`hamburger ${menuOpen ? 'active' : ''}`} onClick={toggleMenu}>
-//           <span></span>
-//           <span></span>
-//           <span></span>
-//         </div>
-//         </div>
-
-// <div className='menubox'>
-
-//         <ul className={`menu ${menuOpen ? 'open' : ''}`}>
-//           <li className="hoverable">
-//             <NavLink to="/category" className={({ isActive }) => (isActive ? 'activeClass' : 'notactiveClass')} onClick={toggleMenu}>
-//             Categories
-//             </NavLink>
-//           </li>
-//           {/* <Searchbar/> */}
-
-//           {/* -------searchbar here-------- */}
-//           <li>
-      
-//           <div className='searchbar'>
-//     <form>
-//     <button className='searchbtn'> <FontAwesomeIcon icon={faSearch}  /></button>
-//       <input
-//           type="text"
-//           placeholder="Search for anything"
-//           className='search form-control'
-//           aria-label="Search"/>
-//       </form>
-//     </div>
-//     </li>
- 
-  
-
-//           <li >
-//             <div className="mobiles-link">
-//               <NavLink to="/udemybuisness" className={({ isActive }) => (isActive ? 'activeClass' : 'notactiveClass')}>
-//               UdemyBuisness
-//               </NavLink>
-//             </div>
-//           </li>
-//           <li>
-//             <div className='udemy'>
-//             <NavLink to="/techonudemy" className={({ isActive }) => (isActive ? 'activeClass' : 'notactiveClass')} onClick={toggleMenu}>
-//             Teach on Udemy
-//             </NavLink>
-//             </div>
-//           </li>
-
-//         </ul>
-       
-// {/* <Addtocart/> */}
-
-// <div className='cart'>
-// <div  className={({ isActive }) => (isActive ? 'activeClass' : 'notactiveClass')} onClick={toggleMenu}>
-//   <img src="https://www.vhv.rs/dpng/d/459-4593681_empty-shopping-cart-shopping-cart-icon-svg-hd.png" alt="img" style={{height:"25px", width:"25px"}} />
-// </div>
-// </div>
-
-
-//         <button className='btnlogin btn'>Login</button>
-//         <button className='btnsignup btn'>Signup</button>
-    
-
-//        </div>
-//         </div>  
-//     </div>
-    
-
-//     </>
-//   )
-// }
-
-// export default Navbar
-
 import React , { useState }from 'react'
 import { NavLink ,Link,useNavigate} from 'react-router-dom'
+import '@fortawesome/fontawesome-free/css/all.css'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { IoMdMenu } from "react-icons/io";
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { IoMdClose } from "react-icons/io";
+// import { AiOutlineMenu } from 'react-icons/ai';
 import Avatar from '@mui/material/Avatar';
 
 import "./Navbar.css";
 
 
 const Navbar = () => {
+  const category = ["Business","Finance & Accounting","IT & Software","Design","Marketing","Life Style","Photography & Video","Music & Arts","Health & Fitness","Teaching & Academic"]
+  const subcategory = [
+    {
+      category:"Business",
+      content:["Communication","Managements","Business Strategy","Operations","Human Resources"]
+    },
+    {
+      category:"Finance & Accounting",
+      content:["Accounting & Bookkeeping","Compliance","Economic","Finance","Taxes"]
+    },
+    {
+      category:"IT & Software",
+      content:["IT Certification","Network & Security","Hardware","Operating system & Servers","Other IT & Software"]
+    },
+    {
+      category:"Design",
+      content:["Web Design","Game Design","3D & Animation","Fashion Design","Other Design"]
+    },
+    {
+      category:"Marketing",
+      content:["Digital Marketing","Social Media Marketing","Public Relationship","Content Marketing","Product Marketing"]
+    },
+    {
+      category:"Life Style",
+      content:["Arts & Crafts","Beauty & Makeup","Food & Beverage","Pet Care & Training","Travel"]
+    },
+    {
+      category:"Photography & Video",
+      content:["Digital Photography","Photography","Video Design","Commercial Photography","Photography Tools"]
+    },
+    {
+      category:"Music & Arts",
+      content:["Instruments","Music Production","Vocal","Music Software","Music Techniques"]
+    },
+    {
+      category:"Health & Fitness",
+      content:["Fitness","Sport","Yoga","Menatl Health","Dance"]
+    },
+    {
+      category:"Teaching & Academic",
+      content:["Engineering","Math","Science","Socal Science","Teacher Training"]
+    }
+  ]
   const navi =useNavigate();
 
   const email = localStorage.getItem("email");
   const token = localStorage.getItem("token");
+  const name=localStorage.getItem("name")
   const handletoken = () => {
     
     localStorage.removeItem("token");
@@ -165,51 +94,123 @@ const Navbar = () => {
   const handleTeachOnUdemyMouseLeave = () => {
     setIsTeachOnUdemyHovered(false);
   };
+  const[val,setVal]=useState(true)
+  const[side,setSide] =useState(true)
+
+  const handleclick = ()=>{
+    setVal(!val)
+  }
+
+  const sideclick = ()=>{
+    setSide(!side)
+  }
+  const [searchval,setsearchVal] = useState("")
+  const searchhandle = (e)=>{
+    setsearchVal(
+      e.target.value)
+  }
+
+  const[searchdata,setsearchdata] = useState()
+
+
+  const searcclean = ()=>{
+    setsearchVal('')
+    console.log(searchdata);
+    navi("/searchcomp", {state:{state:searchval,data:searchdata}})
+  }
+  const[searchbtnval,setSearchbtnval] = useState(false)
+
+  const searchbtnclick = ()=>{
+    setSearchbtnval(!searchbtnval)
+  }
 
   return (
     <>
 
-    <div className="navbar" >
+    <div className="Navhead" >
+    <div onClick={handleclick} className='menuicon'>
+     <IoMdMenu/>
+      </div>
+<div className="logo" onClick={()=>navi('/')}>
 
-    <div className="logog">
-<Link to='/'>
 <img src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg" alt="Udemy" width="91" height="34" loading="lazy"></img>
-</Link>
-        </div>
-      
-  <div className='outerbox'>
-<div className='hamburgerBox'>
-        <div className={`hamburger ${menuOpen ? 'active' : ''}`} onClick={toggleMenu}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        </div>
 
-<div className='menubox'>
-        <ul className={`menu ${menuOpen ? 'open' : ''}`}>
-          <li className="hoverable">
-            <NavLink to="/category" className={({ isActive }) => (isActive ? 'activeClass' : 'notactiveClass')} onClick={toggleMenu}>
-            Categories
-            </NavLink>
+</div>
+          <div className='category'>
+      <p>Categories</p>
+        <div className='categoryList'>
+          <div className='innercategoryconatiner'>
+          {
+            category.map((item,index)=>{
+              return(
+                <div key={index} className='subcategorylist'>
+                <p className='sublist'>
+                  <NavLink to={`/course/${item}`} state={subcategory}>
+                  {item}
+                  </NavLink>
+                </p>
+                <div className='greatericon'> 
+                <i class="fa-solid fa-greater-than"></i></div>
+                <div className='subcategory-InnerList'>
+                  {
+                    subcategory[index].content.map((item,subindex)=>{
+                      return(
+                        <p key={subindex}>
+                          <NavLink to={`/course/${subcategory[index].category}/${item}`} state={subcategory} >
+                            {item}
+                          </NavLink>
+                        </p>
+                      )
+                    })
+                  }
+                </div>
+                </div>
+              )
+            })
+          }
+          </div>
+        </div>
+      </div>
             
-          </li>
+          {/* </li> */}
 
           {/* -------searchbar here-------- */}
-          <li>
       
-          <div className='searchbar'>
-    <form>
-    <button className='searchbtnn'> <FontAwesomeIcon icon={faSearch}  /></button>
-      <input
+   <div className='Navsearch'>
+    
+    <label htmlFor='serchbtn' className='navlabel' > <FontAwesomeIcon icon={faSearch}  className='searchicon' /></label>
+    {/* <FontAwesomeIcon icon={faSearch}  className='searchicon' /> */}
+      <input id='serchbtn' 
+       name="search" 
+      //  value={searchval}
           type="text"
           placeholder="Search for anything"
           className='search form-control'
           aria-label="Search"/>
-      </form>
+      
     </div>
-    </li>
-    <li>
+    {/* mobile search  */}
+    <div className='mobilesearchicon'  onClick={searchbtnclick}>
+    <FontAwesomeIcon icon={faSearch}  className='searchicon' /> 
+      </div>
+
+      {
+        searchbtnval ? 
+        <div className='mobilesearchsection'>
+          <div className='mobilesearch'>
+          <label htmlFor='serchbtn' className='navlabel' 
+          // onClick={()=>{searcclean(),searchbtnclick()}} 
+          >
+           <FontAwesomeIcon icon={faSearch}  className='searchicon' />
+           </label>
+          <input id='serchbtn' type='text' name="search" value={searchval} placeholder='Search for anything' onChange={searchhandle} />
+          </div> 
+        </div>
+      : " "
+      }
+
+
+<div className='navflex tech'>
         <div
           className="mobiles-link"
           onMouseEnter={handleUdemyBuisnessMouseEnter}
@@ -227,9 +228,7 @@ const Navbar = () => {
             </div>
           )}
         </div>
-      </li>
 
-      <li>
         <div
           className='udemy'
           onMouseEnter={handleTeachOnUdemyMouseEnter}
@@ -248,11 +247,9 @@ const Navbar = () => {
             </div>
           )}
         </div>
-      </li>
-            
+        </div>    
      
 
-        </ul>
        
 {/* <Addtocart/> */}
 <Link to="/addtocart">
@@ -262,38 +259,156 @@ const Navbar = () => {
 </div>
 </div>
 </Link>
-<div className="avtar">
+
+{
+  token ?
+  <div className='afterloginshow loginshow'>
+          
+          <p className='mylearning' onClick={()=>navi("/mylearning")}>My Learning</p>
+
+          <div className='dropshowhover'>
+          <div className="avtar">
             {
               email ? (<Avatar className="avtar " style={{ background: "skyblue" }}>{email.split("")[0].toUpperCase()}</Avatar>) : (<Avatar className="avtar " />)
             }
           </div>
+            
+
+            <div className="hangdroplogin">
+              <div className='logindrop'>
+                <div className='showemail'>
+
+                <div className="avtar">
+            {
+              email ? (<Avatar className="avtar " style={{ background: "skyblue" }}>{email.split("")[0].toUpperCase()}</Avatar>) : (<Avatar className="avtar " />)
+            }
+          </div>
+          <p>{email}</p>
+
+          </div>
+
+          <hr/>
+
+                <div className='logindrop2'>
+                <p onClick={()=>navi("/mylearning")}>My Learning</p>
+
+                <p onClick={()=>navi("/addtocart")}>My Cart</p>
+                <p onClick={handletoken}>Logout</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          
+        </div>
+        :
 
 <div className="Sign_In">
-        {token ? (
-
-  <>
-    <Link onClick={handletoken } ><button className='btnlogin btn' >Logout</button></Link>
-  </>
-) : (
- 
+       
   <Link to={"/login"} ><button className='btnlogin btn' >Login</button></Link>
-)}
-        </div>
        <Link to="/signup"><button className='btnsignup btn' >Signup</button></Link>
-        
-         {/* <div className='global' >
-          <img src="https://png.pngtree.com/png-clipart/20190520/original/pngtree-vector-globe-icon-png-image_3787753.jpg" alt="I" style={{height:"30px", width:"30px"}} />
-         </div> */}
-        </div>
+       </div>
 
+  }
+ {/* </div> */}
 
-
-        </div>
     </div>
-    
+     {/* sidebar mobile view */}
+
+     {
+          val ? " " 
+          : 
+            <div className="backgrounblur">
+
+            <div className='sidebar'>
+                {/* /close */}
+                <div onClick={handleclick} className='close'>
+                  <IoMdClose style={{fontSize:"25px"}}/>
+                </div>
+
+              {/* btn */}
+                {
+                  token ?
+                  <div className='sidebarloginsection'>
+                    <p className='sidelogo'>{email}</p>
+                    <div className='sidebarloginsection1'>
+                      <p className='sidelogoName'>{name}</p>
+                      <p>{`${email.slice(0,15)}`}</p>
+                      <div className='sidelogout'>
+                      <p onClick={logout}>Log Out</p>
+                      <p className='' onClick={()=>{Nav("/mylearning"),handleclick()}}>My Learning</p>
+                      </div>
+                    </div>
+                  </div>
+                  :<div className='sidebar-btn'>
+                  <p onClick={()=>{
+                    navi("/login"),
+                    handleclick()
+                  } }>Log in</p>
+                  <p onClick={()=>{
+                    navi("/signup"),
+                    handleclick()
+                  }}>Sign up</p>
+                </div>
+                }
+
+
+                {/* all category */}
+
+                <div className='sidebar-allcategory-container'>
+                  <h3>All Categories</h3>
+
+                  <div className='categoryList'>
+                  <div className='innercategoryconatiner'>
+                  {
+                    category.map((item,index)=>{
+                      return(
+                        <div key={index} className='subcategorylist'>
+                        <p className='sublist'>
+                          <NavLink to={`/course/${item}`} state={subcategory}>
+                          {item}
+                          </NavLink>
+                        </p>
+                        {/* <LiaGreaterThanSolid className='greatericon'/> */}
+                        <div className='subcategory-InnerList'>
+                          {
+                            subcategory[index].content.map((item,subindex)=>{
+                              return(
+                                <p key={subindex}>
+                                  <NavLink to={`/course/${subcategory[index].category}/${item}`} state={subcategory} onClick={()=>handleclick()} >
+                                    {item}
+                                  </NavLink>
+                                </p>
+                              )
+                            })
+                          }
+                        </div>
+                        </div>
+                      )
+                    })
+                  }
+                  </div>
+                </div>
+                      
+                </div>
+
+                <div className='side-tech'>
+                  <p className='side-tech-head'>More from Udemy</p>
+                
+                  <div className='side-conent' onClick={()=>navi("/techonudemy")}>
+                    <p>Tech on Udemy</p>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+        }  
+
 
     </>
   )
 }
 
 export default Navbar
+
