@@ -601,18 +601,17 @@
   .categoryList{
       display: none;
       position: absolute;
-      background-color:var(--bg) ;
+      background-color:white;
       /* background-color: #d95394; */
       top: 75px;
       width: 17rem;
-      height: 37rem;
+      height: 24rem;
       font-weight: lighter;
-      line-height: 45px;
+      line-height: 15px;
       color: rgb(95, 94, 94);
       box-shadow: rgba(49, 18, 18, 0.16) 0px 1px 4px;
   }
   .innercategoryconatiner{
-
       padding-top:2rem ;
       position: absolute;
       top: -30px;
@@ -799,7 +798,8 @@
       left: 274px;
       background-color: var(--bg);
       width: 18rem;
-      height: 37rem;
+      height: 24rem;
+
       box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   }
   .subcategory-InnerList p{
@@ -1028,11 +1028,12 @@
           position: absolute;
           top: 0;
           left: 0;
-          z-index: 3;
+          z-index: 10;
       }
       .sidebar{
           display: block;
           width: 75%;
+          height: 150%;
           background-color: var(--bg);
           height: auto;
           z-index: 5;
@@ -1067,7 +1068,7 @@
           /* padding: 20px 0 15px 15px; */
           position: relative;
           border-bottom: 1px solid var(--grey1);
-          height: 30rem;
+          height: 20rem;
       }
       .sidebar-allcategory-container h3{
           margin: 20px 0 15px 15px;
@@ -1076,8 +1077,8 @@
       }
   
       .side-tech{
-        position: absolute;
-        bottom: -210px;
+        /* position: absolute; */
+        bottom: 20px;
         /* background-color: yellow; */
           line-height: 28px;
           padding:10px 17px;
@@ -1129,12 +1130,15 @@
           display: block;
           position: none;
           background-color: transparent ;
+          /* background-color: yellow; */
           top: 20px;
           width: 100%;
           height: 0;
           /* border: 1px solid; */
           font-weight: lighter;
-          line-height: 42px;
+          /* line-height: 42px; */
+      line-height: 15px;
+
           color: rgb(95, 94, 94)!important;
           box-shadow: none;
           font-size: small;
@@ -1144,6 +1148,7 @@
           width: 100%;
       }
       .sublist{
+        /* margin-top: 20px; */
           padding-left: 15px;
           margin-left: 0px;
           font-size: small!important;
@@ -1215,9 +1220,9 @@
           background-color:var(--bg) ;
           top: 75px;
           width: 17rem;
-          height: 37rem;
+          height: 24rem;
           font-weight: lighter;
-          line-height: 45px;
+          line-height: 15px;
           color: rgb(95, 94, 94);
           box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
       }
@@ -1399,7 +1404,7 @@
           left: 274px;
           background-color: var(--bg);
           width: 18rem;
-          height: 37rem;
+          height: 24rem;
           box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
       }
       .subcategory-InnerList p{

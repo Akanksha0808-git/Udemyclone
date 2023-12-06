@@ -68,7 +68,7 @@ const Navbar = () => {
     localStorage.removeItem("email");
     
     navi("/")
-    window.alert("Logout successfully")
+    // window.alert("Logout successfully")
     
   };
   const [menuOpen, setMenuOpen] = useState(false);
@@ -361,7 +361,7 @@ const Navbar = () => {
 
                 <div className='sidebar-allcategory-container'>
                   <h3>All Categories</h3>
-
+<hr />
                   <div className='categoryList'>
                   <div className='innercategoryconatiner'>
                   {
