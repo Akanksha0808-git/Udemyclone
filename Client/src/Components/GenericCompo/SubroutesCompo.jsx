@@ -2,12 +2,15 @@ import React, { useEffect, useState } from 'react'
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
 import { IoIosInformationCircle } from "react-icons/io";
 import { IoFilter } from "react-icons/io5";
+import { useDispatch } from "react-redux";
+import { addtocart } from "../Redux/Slice";
 import { IoIosArrowDown } from "react-icons/io";
 import { useContext } from 'react';
 import {Store} from "../ContextAPI/DataStore"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
+import Footer from '../Footer/Footer';
 
 const SubroutesCompo = () => {
     const params = useParams();
@@ -464,6 +467,80 @@ const SubroutesCompo = () => {
     console.log(cardData);
 
 
+    // add to cart fuctionality//
+
+    const notify = () => toast.success("Item is added to the cart");
+    const notify2 = () => toast.warn("Please log in first to add to cart.")
+    const [verified, setVerified] = useState(false);
+  
+  
+    const verifyToken = () => {
+      const token = localStorage.getItem("token");
+      console.log("Token:", token);
+  
+      // const url = "http://localhost:4000/dashboard";
+      const url =" https://udemyclone-rx0k.onrender.com/dashboard";
+  
+  
+      if (token) {
+        axios
+          .get(url, {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          })
+          .then((response) => {
+            console.log(response.data);
+            setVerified(true);
+          })
+          .catch((error) => {
+            console.error("Error fetching data:", error);
+            setVerified(false);
+          });
+      } else {
+        setVerified(false);
+      }
+    };
+  
+    useEffect(() => {
+      const token = localStorage.getItem("token");
+      console.log("Token:", token);
+      verifyToken();
+    }, []); // Empty dependency array to ensure it runs only once on mount
+  
+    const dispatch = useDispatch();
+    // const selelct = useSelector((state) => state.cart.data);
+    const [Detaildata] = useContext(Store);
+    // console.log(selelct);
+    
+    const { id } = useParams();
+  
+  
+    const navigate = useNavigate();
+  
+    const handleClick = (item) => {
+      const userid = localStorage.getItem("userid");
+      console.log(item.id, userid);
+  
+      if (verified) {
+        dispatch(
+          addtocart({
+            user_id: userid,
+            id: item.id,
+            name: item.heading,
+            image: item.image,
+            des:item.des,
+            price: item.price,
+          })
+        );
+        notify("Item added to the cart");
+      } else {
+        console.log("User not verified. Please log in first.");
+  
+        navigate("/login"); // Navigate to the login page
+      }
+    };
+  
   return (
     <div>
 
@@ -520,9 +597,26 @@ const SubroutesCompo = () => {
                                             <h3>{`${item.heading.slice(0,50)}...`}</h3>
                                             <span>{item.author}</span>
                                             <p>{item.des}</p>
-                                            <div className='addtocartbtn' onClick={()=>addcartitem(item)}>
+                                            {/* <div className='addtocartbtn' onClick={()=>addcartitem(item)}>
                                             Add to cart
-                                            </div>
+                                            </div> */}
+                                            {verified ? (
+                <button className="addtocartbtn" onClick={() => handleClick(item)}>
+                  Add To Cart
+                </button>
+              ) : (
+                <button
+                  className="mainaddtocartbtn"
+                  onClick={() => {
+                    notify2();
+                    setTimeout(() => {
+                      navigate("/login");
+                    }, 5000); // Adjust the delay (in milliseconds) as needed
+                  }}
+                >
+                  Add To Cart
+                </button>
+              )}
                                         </div>
                                         
                                     </div>
@@ -629,9 +723,26 @@ const SubroutesCompo = () => {
                                         <h3>{`${item.heading.slice(0,50)}...`}</h3>
                                         <span>{item.author}</span>
                                         <p>{item.des}</p>
-                                        <div className='mainaddtocartbtn' onClick={()=>addcartitem(item)}>
+                                        {/* <div className='mainaddtocartbtn' onClick={()=>addcartitem(item)}>
                                         Add to cart
-                                        </div>
+                                        </div> */}
+                                        {verified ? (
+                <button className="mainaddtocartbtn" onClick={() => handleClick(item)}>
+                  Add To Cart
+                </button>
+              ) : (
+                <button
+                  className="mainaddtocartbtn"
+                  onClick={() => {
+                    notify2();
+                    setTimeout(() => {
+                      navigate("/login");
+                    }, 5000); // Adjust the delay (in milliseconds) as needed
+                  }}
+                >
+                  Add To Cart
+                </button>
+              )}
                                     </div>
                                         </div>
                                     )
@@ -655,9 +766,26 @@ const SubroutesCompo = () => {
                                         <h3>{`${item.heading.slice(0,50)}...`}</h3>
                                         <span>{item.author}</span>
                                         <p>{item.des}</p>
-                                        <div className='mainaddtocartbtn' onClick={()=>addcartitem(item)}>
+                                        {/* <div className='mainaddtocartbtn' onClick={()=>addcartitem(item)}>
                                         Add to cart
-                                        </div>
+                                        </div> */}
+                                        {verified ? (
+                <button className="mainaddtocartbtn" onClick={() => handleClick(item)}>
+                  Add To Cart
+                </button>
+              ) : (
+                <button
+                  className="mainaddtocartbtn"
+                  onClick={() => {
+                    notify2();
+                    setTimeout(() => {
+                      navigate("/login");
+                    }, 5000); // Adjust the delay (in milliseconds) as needed
+                  }}
+                >
+                  Add To Cart
+                </button>
+              )}
                                     </div>
                                         </div>
                                     )
@@ -672,7 +800,7 @@ const SubroutesCompo = () => {
             
         </div> 
         <ToastContainer/>
-
+<Footer/>
 </div>
   )
 }

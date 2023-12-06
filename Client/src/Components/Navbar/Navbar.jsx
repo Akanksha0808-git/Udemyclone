@@ -1,13 +1,18 @@
-import React , { useState }from 'react'
+import React , { useState, useEffect }from 'react'
 import { NavLink ,Link,useNavigate} from 'react-router-dom'
+import { useSelector } from "react-redux";
+
 import '@fortawesome/fontawesome-free/css/all.css'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { IoMdMenu } from "react-icons/io";
+import Badge from '@mui/material/Badge';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { IoMdClose } from "react-icons/io";
 // import { AiOutlineMenu } from 'react-icons/ai';
 import Avatar from '@mui/material/Avatar';
+import axios from "axios";
 
 import "./Navbar.css";
 
@@ -56,11 +61,14 @@ const Navbar = () => {
       content:["Engineering","Math","Science","Socal Science","Teacher Training"]
     }
   ]
+  const select = useSelector((state) => state.cart.data);
+  const userid = localStorage.getItem("userid");
+  const filteredItems = select.filter((item) => item.user_id === userid);
   const navi =useNavigate();
 
   const email = localStorage.getItem("email");
   const token = localStorage.getItem("token");
-  const name=localStorage.getItem("name")
+  // const name=localStorage.getItem("name")
   const handletoken = () => {
     
     localStorage.removeItem("token");
@@ -104,35 +112,61 @@ const Navbar = () => {
   const sideclick = ()=>{
     setSide(!side)
   }
-  // const [searchval,setsearchVal] = useState("")
-  // const searchhandle = (e)=>{
-  //   setsearchVal(
-  //     e.target.value)
-  // }
+  const [searchval,setsearchVal] = useState("")
+  const searchhandle = (e)=>{
+    setsearchVal(
+      e.target.value)
+  }
 
-  // const[searchdata,setsearchdata] = useState()
+  const [name, setname] = useState("");
+  const [data1, setdata] = useState([]);
+  const url ="https://udemyclone-rx0k.onrender.com/search";
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        if (name === "") {
+          setdata([]);
+          return;
+        }
 
-  // const searcclean = ()=>{
-  //   setsearchVal('')
-  //   console.log(searchdata);
-  //   navi("/searchcomp", {state:{state:searchval,data:searchdata}})
-  // }
-  // const[searchbtnval,setSearchbtnval] = useState(false)
+        const response = await axios.post( url , {
+          search: name,
+        });
+         console.log(response.data.data) 
+       await  setdata(response.data.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
 
-  // const searchbtnclick = ()=>{
-  //   setSearchbtnval(!searchbtnval)
-  // }
+    fetchData();
+  }, [name]);
 
+  const handleChange = (e) => {
+    // e.preventDefault();
+    setname(e.target.value);
 
+  };
 
+  const handleSubmit = (e) => {
+    setname(e.target.value);
 
+  };
 
+  const handleLinkClick = () => {
+    // Reset the name state to an empty string when a link is clicked
+    setname("");
+      // Reset the data1 state to an empty array when a link is clicked
+  setdata([]);
+    window.scroll(0, 0)
+  };
 
+  const[searchbtnval,setSearchbtnval] = useState(false)
 
-
-
-
+  const searchbtnclick = ()=>{
+    setSearchbtnval(!searchbtnval)
+  }
 
   return (
     <>
@@ -182,22 +216,42 @@ const Navbar = () => {
         </div>
       </div>
             
-          {/* </li> */}
+    
 
           {/* -------searchbar here-------- */}
       
-   <div className='Navsearch'>
+   <div className='Navsearch parentbox'>
     
-    <label htmlFor='serchbtn' className='navlabel' > <FontAwesomeIcon icon={faSearch}  className='searchicon' /></label>
+    <label htmlFor='serchbtn' className='navlabel' onClick={handleSubmit} > <FontAwesomeIcon icon={faSearch}  className='searchicon' /></label>
       <input id='serchbtn' 
        name="search" 
-      //  value={searchval}
+       value={name}
           type="text"
+          onChange={handleChange}
           placeholder="Search for anything"
           className='search form-control'
           aria-label="Search"/>
       
     </div>
+    <div className="list">
+        {data1.length >0 ? (
+          <ul>
+            {data1.slice(0, 10).map((item, index) => (
+              <Link
+                        to={"/course/" + item.id }
+                        onClick={handleLinkClick}
+                        key={index}
+                      >
+              <li key={index}>{item.heading}</li>
+              </Link>
+              // <li key={index}>{item.heading}</li>
+
+            ))}
+          </ul>
+        ) : (
+         null
+        )}
+      </div>
     {/* mobile search  */}
     <div className='mobilesearchicon'  onClick={searchbtnclick}>
     <FontAwesomeIcon icon={faSearch}  className='searchicon' /> 
@@ -212,62 +266,73 @@ const Navbar = () => {
           >
            <FontAwesomeIcon icon={faSearch}  className='searchicon' />
            </label>
-          <input id='serchbtn' type='text' name="search" value={searchval} placeholder='Search for anything' onChange={searchhandle} />
+          <input id='serchbtn' type='text' name="search"
+          
+          // value={searchval}
+           placeholder='Search for anything' onChange={searchhandle} />
           </div> 
+          <div className="list">
+        {data1.length >0 ? (
+          <ul>
+            {data1.slice(0, 10).map((item, index) => (
+              <Link
+                        to={"/detailpage/" + item.id }
+                        onClick={handleLinkClick}
+                        key={index}
+                      >
+              <li key={index}>{item.heading}</li>
+              </Link>
+
+            ))}
+          </ul>
+        ) : (
+         null
+        )}
+      </div>
         </div>
+        
       : " "
       }
 
 
-<div className='navflex tech'>
-        <div
-          className="mobiles-link"
-          onMouseEnter={handleUdemyBuisnessMouseEnter}
-          onMouseLeave={handleUdemyBuisnessMouseLeave}
-        >
-          <NavLink
-            className={isUdemyBuisnessHovered ? 'activeClass' : 'notactiveClass'}
-          >
-            UdemyBuisness
-          </NavLink>
-          {isUdemyBuisnessHovered && (
-            <div className="hover-box">
-              <p>Get your team access to over 25,000 top Udemy courses, anytime, anywhere.</p>
-              <button className='try-button'>Try Udemy Business</button>
-            </div>
-          )}
+
+         <div className='navflex tech'>
+      <div className='udemybussiness'>
+        <p>Udemy Business</p>
+        <div className='hoverBlock1' >
+          <p>Get your team access to over 25,000 top Udemy courses, anytime, anywhere.</p>
+          <div className='hoverBlock1-btn1'>Try Udemy Business</div>
         </div>
 
-        <div
-          className='udemy'
-          onMouseEnter={handleTeachOnUdemyMouseEnter}
-          onMouseLeave={handleTeachOnUdemyMouseLeave}
-        >
-          <NavLink
-            to="/techonudemy"
-            className={isTeachOnUdemyHovered ? 'activeClass' : 'notactiveClass'}
-          >
-            Teach on Udemy
-          </NavLink>
-          {isTeachOnUdemyHovered && (
-            <div className="hover-box">
-              <p>Unlock your earning potential. Reach millions of students worldwide.</p>
-              <button className='try-button'>Learn More</button>
-            </div>
-          )}
+      </div>
+      <div className='udemytech'>
+        <p onClick={()=>navi("techonudemy")}>Tech on Udemy</p>
+        <div className='hoverBlock2'>
+          <p>Turn what you know into an opportunity and reach millions around the world.</p>
+          <div className='hoverBlock1-btn1' onClick={()=>navi("techonudemy")}>Learn More</div>
         </div>
-        </div>    
+      </div>
+      </div>
      
 
        
 {/* <Addtocart/> */}
-<Link to="/addtocart">
-<div className='cart'>
-<div  className={({ isActive }) => (isActive ? 'activeClass' : 'notactiveClass')} onClick={toggleMenu}>
-  <img src="https://www.vhv.rs/dpng/d/459-4593681_empty-shopping-cart-shopping-cart-icon-svg-hd.png" alt="img" style={{height:"25px", width:"25px"}} />
-</div>
-</div>
-</Link>
+
+ <div className='cart'>
+          <Link to={"/addtocart"}>
+           
+          {
+              filteredItems.length ? (<Badge badgeContent={filteredItems.length} color="primary">
+                <ShoppingCartIcon id="icon" />
+              </Badge>)
+                :
+                (<Badge badgeContent={0} color="primary">
+                  <ShoppingCartIcon id="icon" />
+                </Badge>)
+            }
+            
+          </Link>
+        </div>
 
 {
   token ?
@@ -312,16 +377,19 @@ const Navbar = () => {
         </div>
         :
 
-<div className="Sign_In">
+        <div className='navflex navbtn'>
+        <div className='navbtn signin'>
+          <p onClick={()=>navi('/login')}>Log in</p>
+        </div>
+        <div className='navbtn singup'>
+          <p onClick={()=>navi('signup')}>Sign up</p>
+        </div>
        
-  <Link to={"/login"} ><button className='btnlogin btn' >Login</button></Link>
-       <Link to="/signup"><button className='btnsignup btn' >Signup</button></Link>
-       </div>
+      </div>
 
   }
  {/* </div> */}
 
-    </div>
      {/* sidebar mobile view */}
 
      {
@@ -366,7 +434,7 @@ const Navbar = () => {
                 }
 
 
-                {/* all category */}
+                {/* Side bar all category */}
 
                 <div className='sidebar-allcategory-container'>
                   <h3>All Categories</h3>
@@ -382,7 +450,6 @@ const Navbar = () => {
                           {item}
                           </NavLink>
                         </p>
-                        {/* <LiaGreaterThanSolid className='greatericon'/> */}
                         <div className='subcategory-InnerList'>
                           {
                             subcategory[index].content.map((item,subindex)=>{
@@ -418,6 +485,7 @@ const Navbar = () => {
             </div>
         }  
 
+</div>
 
     </>
   )

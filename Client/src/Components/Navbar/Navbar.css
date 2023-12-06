@@ -1,525 +1,3 @@
- body{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
- 
-  .logog {
-
-    top: 10px;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-  }
-  
-  .logog img {
-  margin-top: 2px;
-    margin-left: 24px;
-  }
- .outerbox{
-  position: relative;
-  top: -30px;
- }
-.navbar{
-     height: 73px;
-     width: 100vw;
-    background-color: rgb(255, 255, 255);
-    box-shadow: 0 2px 8px rgba(0,0,0,.08), 0 4px 12px rgba(0, 0, 0, 0.804);
-    z-index: 1010;
-}
-.navbar ul{
-    
-    align-items: center;
-}
-.navbar li a {
-  
-    font-family: sans-serif;
-    color: rgba(0, 0, 0, 0.47);
-  
-    letter-spacing: -.02rem;
-    font-size:15px;
-    text-decoration: none;
-    
-  }
-  nav ul li a:not(.active):hover {
-    background-color:hotpink;
-    color: #fff;
-  }
-.menubox{
-    font-family: var(--font-stack-text);
-    text-decoration: none;
-    list-style: none;
-    display: flex;
-    align-items: center;
-
-}
-
-   .menu {
-    display: flex;
-   justify-content:flex-start;
-   height: 0px;
-    width: 100%;
-    list-style: none;
-    text-decoration: none;
-    gap: 20px;
-     padding: 1rem;
-   
-  }
-.notactiveClass{
-    color: rgb(0, 0, 0);
-    transition-delay: 0.2s ease;
-}
-
-
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-  }
-  
-  
-  .hamburger span {
-    width: 30px;
-    height: 3px;
-    background-color:#2d2f31;
-
-
-    margin: 4px 0;
-    transition: all 0.3s ease;
-  }
-  
-   .hamburger.active span:nth-child(1) {
-    transform: rotate(-45deg) translate(-9px, 10px);
-    background-color:hotpink;
-
-  }
-  
-  .hamburger.active span:nth-child(2) {
-    opacity: 0;
-  }
-  
-  .hamburger.active span:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -7px);
-  }
-  .btn{
-    height: 40px;
-    width: 90px;
-    margin: 0px 4px;
-    cursor: pointer;
-  }
-  .btn:hover {
-    background-color: gray ;
-  }
-  .btnlogin{
-    background-color: white;
-    border: none;
-    border: 1px solid rgb(76, 74, 74);
-   
-  }
-  .btnsignup{
-    background-color: rgba(45, 45, 44, 0.932);
-    color: white;
-    font-weight: 600;
-  }
-
-  .cart{
-    display: flex;
-    align-items: center;
-    margin-right: 10px;
-    height: 30px;
-    width: 30px;
-    cursor: pointer;
-    
-  }
-  .global{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 40px;
-    width: auto;
-    border: 1px solid rgb(76, 74, 74);
-   
-  }
-  .global:hover{
-    background-color: gray ;
-  }
-  .hoverable{
-    margin-left: 120px;
-  }
-  .searchbar{
-    display: flex;
-    position: relative;
-    width: 47vw;
-    height: 45px;
-    flex-grow: 1;
-    border: 1px solid #2d2f31;
-    border-radius: 9999px;
-    background-color: #f7f9fa;
-}
-
-
-.search {
-    font-family: var(--font-stack-text);
-
-    /* position: relative; */
-    top: 10px;
-    left: 49px;
-    border: none;
-
-    width: 78%;
-    font-size: 16px;
-  }
-  .searchbtnn{
-    font-size: 17px;
-    border: none;
-    background-color: #ffff;
-    position: absolute;
-    top: 12px;
-    left: 6px;
-    color: gray;
-  }
- 
-  .mobiles-link {
-    z-index: 2000;
-    position: relative;
-  }
-  .udemy{
-    z-index: 2000;
-    position: relative;
-  }
-  
-  
- /* login drop css */
-  .afterloginshow{
-    display: flex;
-    /* justify-content: space-around; */
-    height: fit-content;
-    position: relative;
-    align-items: center;
-    gap: 0 10px;
-}
-.loginshow{
-    grid-area: 1/6/2/7;
-}
-.logologin{
-    border-radius: 2rem;
-    border: 1px solid;
-    width: 2.4rem;
-    height: 2.3rem;
-    text-align: center;
-    text-transform: uppercase;
-    background-color: #2d2f31;
-    color: white;
-}
-.mylearning{
-  cursor: pointer;
-    font-size: large!important;
-    color: #636363;
-}
-.logologin p{
-    font-size: x-large;
-}
-.logindrop{
-    display: none;
-    position: absolute;
-    top: 17px;
-    right: 0px;
-    background-color: white;
-    width: 16rem;
-    z-index: 2;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    padding: 1rem 0.8rem;
-}
-
-
-.logindrop2{
-    line-height: 30px;
-}
-.logindrop2 p {
-    font-size: large;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #636363;
-    cursor: pointer;
-}
-
-.hangdroplogin{
-    position: absolute;
-    width: 100%;
-    left: 0rem;
-    height: 7rem;
-    z-index: 2;
-}
-.dropshowhover:hover .logindrop{
-    display: block;
-}
-.showemail{
-  display: flex;
-  /* justify-content: space-between; */
-  gap: 20px;
-}
-
-/* category */
-.category{
-  grid-area: 1/2/2/3;
-  position: relative;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  z-index: 2;
-}
-.categoryList{
-  display: none;
-  position: absolute;
-  background-color:var(--bg) ;
-  top: 75px;
-  width: 17rem;
-  height: 37rem;
-  font-weight: lighter;
-  line-height: 45px;
-  color: rgb(95, 94, 94);
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-}
-.innercategoryconatiner{
-  padding-top:2rem ;
-  position: absolute;
-  top: -30px;
-  width: 30rem;
-}
-.sublist{
-  margin-left: 18px;
-}
-.greatericon{
-  position: absolute;
-  left: 15rem;
-  margin-top: -30px;
-}
-.category:hover .categoryList{
-  display: block;
-}
-
-.Navhead p{
-  font-size: var(--textfont);
-  font-weight: 500;
-}
-.Navsearch{
-  grid-area: 1/3/2/4;
-  border: 1px solid #101112;
-  height: 46px;
-  background-color: #f7f9fa;
-  border-radius: 30px;
-  display: flex;
-  align-items: center;
-  padding: 0 14px;
-}
-.searchicon{
-  font-size: 25px;
-  color: var(--grey);
-  margin: 2px 10px 0 0;
-}
-.Navsearch input{
-  height: 1.5rem;
-  width: 100%;
-  border: none;
-  background-color: transparent;
-  outline: none;
-}
-.tech{
-  grid-area: 1/4/2/5;
-}
-.navflex{
-  display: flex;
-  /* justify-content: space-around; */
-  height: fit-content;
-  position: relative;
-  gap: 0 6px;
-}
-.hoverBlock1{
-  display: none;
-}
-.hoverBlock1-btn1{
-  border: 1px solid;
-  width: fit-content;
-  padding: 12px 12px;
-  color: white;
-  background-color: black;
-}
-.hoverBlock1-btn1:hover{
-  background-color: #333333;
-}
-.hoverBlock1 p{
-  font-size: large;
-  font-weight: 700;
-  text-align: center;
-}
-.hang{
-  height: 68px;
-  width: 80px;
-  z-index: 2;
-  left: 0;
-  position: absolute;
-}
-.udemybussiness:hover .hoverBlock1{
-  position: absolute;
-  top: 48px;
-  right: 120px;
-  width: 18rem;
-  padding: 10px 5px;
-  z-index: 2;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 18px 0;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-.hoverBlock2{
-  display: none;
-}
-.hoverBlock2 p{
-  font-size: large;
-  font-weight: 700;
-  text-align: center;
-}
-.hang1{
-  height: 68px;
-  width: 80px;
-  z-index: 2;
-  right: 20px;
-  position: absolute;
-}
-.udemytech:hover .hoverBlock2{
-  position: absolute;
-  top: 48px;
-  right: 0px;
-  width: 18rem;
-  padding: 10px 5px;
-  z-index: 2;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 18px 0;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-
-
-
-
-
-  /* Add any other styles for activeClass and notactiveClass as needed */
-  
-  @media  (max-width: 823px) {
-    .btn{
-      display: none;
-    }
-    .global{
-      display: none;
-    }
-    .logog{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .hamburgerBox{
-        position: absolute;
-        top: 9px;
-        height: 33px;
-        width: 100%;
-        display: flex;
-        justify-content: flex-start;
-   
-       }
-       .black-link {
-        color: #fff;
-        display: flex;
-        justify-content: center;
-      }
-    
-      .menu {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-          z-index: 60;
-            gap: 1px;
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-          background-color: #d95394;
-              position: absolute;
-              top: 55px;
-              height: 200px;
-              width: 30%;
-              opacity: 0;
-              pointer-events: none;
-              transition: all 0.3s ease;
-        
-      }
-  
-  
-      .menu.open {
-        display: flex;
-        justify-content: center;
-        opacity: 1;
-        pointer-events: auto;
-      }
-      
-      .hamburger {
-        display: flex;
-   
-      }
-      .hamburger span {
-        border-radius: 60px;
-       
-      }
-      .hamburger.active span:nth-child(1) {
-        transform: rotate(-45deg) translate(-9px, 10px);
-        background-color:#2d2f31;
-  
-      }
-      
-      .hamburger.active span:nth-child(2) {
-        opacity: 0;
-      }
-      
-      .hamburger.active span:nth-child(3) {
-        transform: rotate(45deg) translate(-5px, -7px);
-        background-color:#2d2f31;
-
-      }
-      .activeClass{
-        color: rgb(185, 49, 239) !important;}
-
-        .cart{
-          width: 100%;
-          display: flex;
-          justify-content: flex-end;
-        }
-        .searchbar{
-   
-    display: none;
-}
-  }
-  @media (max-width: 1080px){
-.mobiles-link{
-  display: none;
-}
-
-  }
-  @media (max-width: 920px){
-.udemy{
-  display: none;
-}
-  }
-  @media (max-width: 415px)and (min-width: 375px){
-    .navbar{
-      width: 100%;
-    }
-  
-      }
-
-     /* ----------------- */
 
      :root{
       --bg:white;
@@ -535,6 +13,7 @@
       background-color: var(--bg);
       display: grid;
       grid-template-columns: 0.6fr 0.5fr 4.2fr auto 0.3fr auto ;
+      /* font-size: 20px; */
       height: 72px;
       padding: 0 24px;
       align-items: center;
@@ -559,6 +38,12 @@
       display: flex;
       align-items: center;
       z-index: 2;
+     
+  }
+  .category p{
+    font-size: 17px;
+    font-weight: 600px;
+    font-family: sans-serif;
   }
   .categoryList{
       display: none;
@@ -629,89 +114,90 @@
       /* justify-content: space-around; */
       height: fit-content;
       position: relative;
+      /* font-size: 25px; */
       gap: 0 6px;
   }
-  .hoverBlock1{
-      display: none;
-  }
-  .hoverBlock1-btn1{
-      border: 1px solid;
-      width: fit-content;
-      padding: 12px 12px;
-      color: white;
-      background-color: black;
-  }
-  .hoverBlock1-btn1:hover{
-      background-color: #333333;
-  }
-  .hoverBlock1 p{
-      font-size: large;
-      font-weight: 700;
-      text-align: center;
-  }
-  .hang{
-      height: 68px;
-      width: 80px;
-      z-index: 2;
-      left: 0;
-      position: absolute;
-  }
-  .udemybussiness:hover .hoverBlock1{
-      position: absolute;
-      top: 48px;
-      right: 120px;
-      width: 18rem;
-      padding: 10px 5px;
-      z-index: 2;
-      background-color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 18px 0;
-      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  }
-  .hoverBlock2{
-      display: none;
-  }
-  .hoverBlock2 p{
-      font-size: large;
-      font-weight: 700;
-      text-align: center;
-  }
-  .hang1{
-      height: 68px;
-      width: 80px;
-      z-index: 2;
-      right: 20px;
-      position: absolute;
-  }
-  .udemytech:hover .hoverBlock2{
-      position: absolute;
-      top: 48px;
-      right: 0px;
-      width: 18rem;
-      padding: 10px 5px;
-      z-index: 2;
-      background-color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 18px 0;
-      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  }
   
+  .hoverBlock1{
+    display: none;
+}
+.hoverBlock1-btn1{
+    border: 1px solid;
+    width: fit-content;
+    padding: 12px 12px;
+    color: white;
+    background-color: black;
+}
+.hoverBlock1-btn1:hover{
+    background-color: #333333;
+}
+.hoverBlock1 p{
+    font-size: large;
+    font-weight: 700;
+    text-align: center;
+}
+
+.udemybussiness p{
+    font-size: 16px;
+    font-weight: 600px;
+    font-family: sans-serif;
+}
+.udemytech p{
+    font-size: 16px;
+    font-weight: 600px;
+    font-family: sans-serif;
+}
+.udemybussiness:hover .hoverBlock1{
+    position: absolute;
+    top: 78px;
+    right: 120px;
+    width: 18rem;
+    padding: 10px 5px;
+    z-index: 2;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 18px 0;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.hoverBlock2{
+    display: none;
+}
+.hoverBlock2 p{
+    font-size: large;
+    font-weight: 700;
+    text-align: center;
+}
+
+.udemytech:hover .hoverBlock2{
+    position: absolute;
+    top: 78px;
+
+    right: 0px;
+    width: 18rem;
+    padding: 10px 5px;
+    z-index: 2;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 18px 0;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
   /* cart */
   .cart{
       grid-area: 1/5/2/6;
       position: relative;
   }
-  .cartlogo{
+  /* .cartlogo{
       font-size: 24px;
       margin-top: 8px;
-  }
-  .cartnumber{
+  } */
+  /* .cartnumber{
       background-color: var(--purple);
       color: white;
       border-radius: 20rem;
@@ -723,7 +209,7 @@
       position: absolute;
       left: 16px;
       top: -4px;
-  }
+  } */
   .navbtn{
       grid-area: 1/6/2/7;
   }

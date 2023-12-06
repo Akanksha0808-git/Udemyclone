@@ -12,8 +12,17 @@ const courseSchema = new mongoose.Schema({
   price: String,
 
 });
+const learnignScehema = mongoose.Schema({
+  id: Number,
+  heading: String,
+  des:String,
+  image:String,
+  author : String,
+  rating: String,
+  price: String,
+})
 
 
 const Courses = new mongoose.model("Courses" , courseSchema);
-
-module.exports = Courses
+const mylearningCollection = mongoose.model("Mylearning",learnignScehema)
+module.exports = {Courses,mylearningCollection}

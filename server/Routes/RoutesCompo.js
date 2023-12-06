@@ -1,4 +1,4 @@
-const allcourses=require("../controller/courseController")
+const {allcourses,pushlearningdata,getlearning}=require("../controller/courseController")
 const { Signup, login, dashboard,searchcourses } = require("../controller/userController");
 const userAuth = require("../midddleware/authmiddleware");
 const routes = require("express").Router();
@@ -15,6 +15,9 @@ routes.post("/login", login)
 // search courses 
 routes.post("/search", searchcourses)
 
+//learningdata
+routes.post("/mylearning",pushlearningdata)
+routes.get("/getlearningdata",getlearning)
 // Auth Checking 
 routes.get("/dashboard",userAuth , dashboard);
 

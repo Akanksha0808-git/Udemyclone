@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
+import { useDispatch } from "react-redux";
+import { addtocart } from "../Redux/Slice";
 import { IoIosInformationCircle } from "react-icons/io";
 import { IoFilter } from "react-icons/io5";
 import { IoIosArrowDown } from "react-icons/io";
@@ -437,36 +439,78 @@ const CourseComp = () => {
 
     const cardData = Data && Data.filter(item=> params.category === item.category )
     console.log(cardData);
+    
+    const notify = () => toast.success("Item is added to the cart");
+  const notify2 = () => toast.warn("Please log in first to add to cart.")
+  const [verified, setVerified] = useState(false);
 
-    // addto cart
 
-    const [items,setItems] =useState();
-    // useEffect(()=>{
-    //     axios.get("https://udemyclone-api.onrender.com/api/getcartdata").
-    //     then((res)=>setItems(res.data)).catch((err)=>console.log("Cart error", err))
-    // },[cardData])
+  const verifyToken = () => {
+    const token = localStorage.getItem("token");
+    console.log("Token:", token);
 
-    const token = localStorage.getItem("token")
+    // const url = "http://localhost:4000/dashboard";
+    const url =" https://udemyclone-rx0k.onrender.com/dashboard";
 
-    const addcartitem = async(item)=>{
-        // console.log(item.id);
-        // console.log(items);
-        if(token){
-            const letsfind = items.find((items)=>items.id === item.id)
 
-            if(letsfind)
-            {
-                toast.success("Item is already Added in cart check your Cart");
-            }
-            else{
-                // await axios.post('https://udemyclone-api.onrender.com/api/addcart',item);
-                window.alert("item added")
-            }
-        }
-        else{
-            toast.warn("Need to Login first");
-        }
+    if (token) {
+      axios
+        .get(url, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
+        .then((response) => {
+          console.log(response.data);
+          setVerified(true);
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+          setVerified(false);
+        });
+    } else {
+      setVerified(false);
     }
+  };
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    console.log("Token:", token);
+    verifyToken();
+  }, []); // Empty dependency array to ensure it runs only once on mount
+
+  const dispatch = useDispatch();
+  // const selelct = useSelector((state) => state.cart.data);
+  const [Detaildata] = useContext(Store);
+  // console.log(selelct);
+  
+  const { id } = useParams();
+
+
+  const navigate = useNavigate();
+
+  const handleClick = (item) => {
+    const userid = localStorage.getItem("userid");
+    console.log(item.id, userid);
+
+    if (verified) {
+      dispatch(
+        addtocart({
+          user_id: userid,
+          id: item.id,
+          name: item.heading,
+          image: item.image,
+          des:item.des,
+          price: item.price,
+        })
+      );
+      notify("Item added to the cart");
+    } else {
+      console.log("User not verified. Please log in first.");
+
+      navigate("/login"); // Navigate to the login page
+    }
+  };
 
 
   return (
@@ -529,9 +573,26 @@ const CourseComp = () => {
                                 <h3>{`${item.heading.slice(0,50)}...`}</h3>
                                 <span>{item.author}</span>
                                 <p>{item.des}</p>
-                                <div className='addtocartbtn' onClick={()=>addcartitem(item)} >
+                                {/* <div className='addtocartbtn' onClick={()=>addcartitem(item)} >
                                 Add to cart
-                                </div>
+                                </div> */}
+                                {verified ? (
+                <button className="addtocartbtn" onClick={() => handleClick(item)}>
+                  Add To Cart
+                </button>
+              ) : (
+                <button
+                  className="addtocartbtn"
+                  onClick={() => {
+                    notify2();
+                    setTimeout(() => {
+                      navigate("/login");
+                    }, 5000); // Adjust the delay (in milliseconds) as needed
+                  }}
+                >
+                  Add To Cart
+                </button>
+              )}
                             </div>
 
                         </div>
@@ -643,9 +704,26 @@ const CourseComp = () => {
                                         <h3>{`${item.heading.slice(0,50)}...`}</h3>
                                         <span>{item.author}</span>
                                         <p>{item.des}</p>
-                                        <div className='mainaddtocartbtn' onClick={()=>addcartitem(item)}>
+                                        {/* <div className='mainaddtocartbtn' onClick={()=>addcartitem(item)}>
                                         Add to cart
-                                        </div>
+                                        </div> */}
+                                         {verified ? (
+                <button className="mainaddtocartbtn" onClick={() => handleClick(item)}>
+                  Add To Cart
+                </button>
+              ) : (
+                <button
+                  className="mainaddtocartbtn"
+                  onClick={() => {
+                    notify2();
+                    setTimeout(() => {
+                      navigate("/login");
+                    }, 5000); // Adjust the delay (in milliseconds) as needed
+                  }}
+                >
+                  Add To Cart
+                </button>
+              )}
                                     </div>
 
                                 </div>

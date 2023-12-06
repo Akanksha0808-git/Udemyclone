@@ -10,6 +10,7 @@ import Signup from '../LoginSignup/Signup';
 import Addtocart from '../AddToCart/Addtocart';
 import CourseComp from '../GenericCompo/CourseCompo';
 import SubroutesCompo from '../GenericCompo/SubroutesCompo';
+import Learning from '../GenericCompo/Learning';
 const RouteFiles = () => {
   return (
     <>
@@ -25,6 +26,8 @@ const RouteFiles = () => {
   <Route path="/login" element={<Login/>}/>
   <Route path="/signup" element={<Signup/>}/>
   <Route path="/addtocart" element={<Addtocart/>}/>
+  <Route path="/mylearning" element={<Learning/>}/>
+
 
 
 
