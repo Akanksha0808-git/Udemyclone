@@ -104,25 +104,35 @@ const Navbar = () => {
   const sideclick = ()=>{
     setSide(!side)
   }
-  const [searchval,setsearchVal] = useState("")
-  const searchhandle = (e)=>{
-    setsearchVal(
-      e.target.value)
-  }
+  // const [searchval,setsearchVal] = useState("")
+  // const searchhandle = (e)=>{
+  //   setsearchVal(
+  //     e.target.value)
+  // }
 
-  const[searchdata,setsearchdata] = useState()
+  // const[searchdata,setsearchdata] = useState()
 
 
-  const searcclean = ()=>{
-    setsearchVal('')
-    console.log(searchdata);
-    navi("/searchcomp", {state:{state:searchval,data:searchdata}})
-  }
-  const[searchbtnval,setSearchbtnval] = useState(false)
+  // const searcclean = ()=>{
+  //   setsearchVal('')
+  //   console.log(searchdata);
+  //   navi("/searchcomp", {state:{state:searchval,data:searchdata}})
+  // }
+  // const[searchbtnval,setSearchbtnval] = useState(false)
 
-  const searchbtnclick = ()=>{
-    setSearchbtnval(!searchbtnval)
-  }
+  // const searchbtnclick = ()=>{
+  //   setSearchbtnval(!searchbtnval)
+  // }
+
+
+
+
+
+
+
+
+
+
 
   return (
     <>
@@ -179,7 +189,6 @@ const Navbar = () => {
    <div className='Navsearch'>
     
     <label htmlFor='serchbtn' className='navlabel' > <FontAwesomeIcon icon={faSearch}  className='searchicon' /></label>
-    {/* <FontAwesomeIcon icon={faSearch}  className='searchicon' /> */}
       <input id='serchbtn' 
        name="search" 
       //  value={searchval}

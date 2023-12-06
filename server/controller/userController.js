@@ -75,8 +75,7 @@ const searchcourses = async (req, res) => {
         console.log(search)
         const searching = await Courses.find({
           $or: [
-            { heading: { $regex: new RegExp(search, "i") } },
-            { des: { $regex: new RegExp(search, "i") } },
+          
             { category: { $regex: new RegExp(search, "i") } },
             // Add more fields as needed
           ],
