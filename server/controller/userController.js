@@ -1,6 +1,6 @@
 // let arr = []; // database
 const User=require("../model/userSchema")
-// const Courses=require("../model/courseSchema")
+const Courses=require("../model/courseSchema")
 const saltround = 10
 const jwt=require("jsonwebtoken")
 const secretkey="#@$%^&*"
@@ -68,42 +68,42 @@ const login = async(req, res) => {
     })
 }
 
-// const searchcourses = async (req, res) => {
+const searchcourses = async (req, res) => {
   
-//     try {
-//         const search = req.body.search;
-//         console.log(search)
-//         const searching = await Courses.find({
-//           $or: [
-//             { heading: { $regex: new RegExp(search, "i") } },
-//             { details: { $regex: new RegExp(search, "i") } },
-//             { category: { $regex: new RegExp(search, "i") } },
-//             // Add more fields as needed
-//           ],
-//         })
+    try {
+        const search = req.body.search;
+        console.log(search)
+        const searching = await Courses.find({
+          $or: [
+            { heading: { $regex: new RegExp(search, "i") } },
+            { des: { $regex: new RegExp(search, "i") } },
+            { category: { $regex: new RegExp(search, "i") } },
+            // Add more fields as needed
+          ],
+        })
     
-//         if (searching.length > 0) {
-//           return res.status(200).json({
-//             success: true,
-//             msg: "Courses Details",
-//             data: searching,
-//           });
-//         } else {
-//           return res.status(404).json({ msg: "No matching Courses found" });
-//         }
-//       } catch (err) {
-//         console.log(err.message);
-//         return res.status(500).json({
-//           msg: "Internal Server Error",
-//           error: err.message,
-//         });
-//       }
+        if (searching.length > 0) {
+          return res.status(200).json({
+            success: true,
+            msg: "Courses Details",
+            data: searching,
+          });
+        } else {
+          return res.status(404).json({ msg: "No matching Courses found" });
+        }
+      } catch (err) {
+        console.log(err.message);
+        return res.status(500).json({
+          msg: "Internal Server Error",
+          error: err.message,
+        });
+      }
     
-//   };
+  };
   
 
 
-module.exports = { Signup, login,dashboard };
+module.exports = { Signup, login,dashboard,searchcourses };
 
 
 

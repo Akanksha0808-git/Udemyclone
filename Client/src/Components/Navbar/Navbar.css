@@ -161,7 +161,7 @@
 .search {
     font-family: var(--font-stack-text);
 
-    position: relative;
+    /* position: relative; */
     top: 10px;
     left: 49px;
     border: none;
@@ -188,45 +188,7 @@
     position: relative;
   }
   
-  .hover-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    flex-direction: column;
-    top:50px; 
-    left: 0;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
-    padding: 10px;
-    width: 250px;
-  }
-  .hover-box2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    flex-direction: column;
-    top:50px; 
-    left: 0;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
-    padding: 10px;
-    width: 250px;
-  }
- 
- 
   
-  .try-button {
-   width: 100%;
-    background-color: black;
-    color: white;
-    padding: 8px 16px;
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
-    border-radius: 4px;
-  }
  /* login drop css */
   .afterloginshow{
     display: flex;
