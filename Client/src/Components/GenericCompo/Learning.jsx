@@ -1,11 +1,11 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-// import "../StyleComp/learning.css"
+import "./Learning.css"
 
 const Learning = () => {
   const[data,setData] = useState()
   useEffect(()=>{
-    axios.get("https://udemyclone-rx0k.onrender.com/getlearningdata").
+    axios.get("https://udemyclone-api.onrender.com/api/getlearningdata").
     then((res)=> setData(res.data)).catch(err=>console.log("My learning" ,err))
   },[])
   return (
