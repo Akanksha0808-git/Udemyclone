@@ -97,6 +97,8 @@ body{
   display: flex;
   line-height: 25px;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   gap: 0 17px;
   padding-top: 15px;
 }
