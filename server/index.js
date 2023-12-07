@@ -4,14 +4,14 @@ const datacreation = require('./datacreation');
 const connection = require("./config/db");
 const cors = require("cors");
 const routes = require("./Routes/RoutesCompo");
-const stripe = require("stripe")("your_stripe_secret_key");
+const stripe = require("stripe")(  "sk_test_51OFXU6SJDDUS7wiVF42k1bQr5SjgEIKlK4RCo2QyAWXpZPxTFVvCEmRjPqScw86Z2YZUoOzzAt5rhFr2MVhmOQkI00uHO7oleN");
 
 const app = express();
 const PORT = process.env.PORT || 7000;
 
 // Cors policy
 app.use(cors({
-  origin: "*"
+  origin: "https://akanksha-udemy.netlify.app",
 }));
 
 // Body parser
