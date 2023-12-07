@@ -62,6 +62,8 @@ const url="https://udemyclone-rx0k.onrender.com/signup"
 
   return (
     <>
+    <ToastContainer/>
+
     <div className="signup-container">
       <h3>Signup and Start Learning</h3>
       <form onSubmit={handleSubmit}>
@@ -124,7 +126,6 @@ const url="https://udemyclone-rx0k.onrender.com/signup"
 
       <p>Already have an account? <a href="/login">Log in</a></p>
     </div>
-    <ToastContainer/>
 
     </>
   );
