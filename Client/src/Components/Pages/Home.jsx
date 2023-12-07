@@ -113,9 +113,9 @@ const Home = () => {
 ]
   return (
     <div>
-      {/* <Carousel1/> */}
+      <Carousel1/>
    
-      {/* <div className='banner'>
+      <div className='banner'>
      
       <p>Trusted by over 15,000 companies and millions of learners around the world</p>
  
@@ -135,7 +135,7 @@ const Home = () => {
        </div>
 
       
-      </div> */}
+      </div>
     
 
     <p></p>

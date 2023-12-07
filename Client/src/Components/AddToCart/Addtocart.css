@@ -147,7 +147,14 @@ table td, tfoot, th, thead, tr{
 .no-items-message img{
   height:360px ;
 }
-
+.emptybtn{
+  border: 1px solid #a435f0;
+  background-color: #a435f0;
+  color: white;
+  padding: 10px 15px;
+  margin-top: 12px;
+  cursor: pointer;
+}
 @media screen and (max-width: 815px) {
   .OderProduct{
     /* width: 90vw; */
