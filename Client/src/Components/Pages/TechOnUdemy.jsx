@@ -66,7 +66,40 @@ const TechOnUdemy = () => {
   <h3>Enterprise <br /> customers</h3>
 </div>
 </div>
+<div className="beginsection">
 
+<h1>How to begin</h1>
+<div className="beginsection1">
+  <h3 className='h3'>Plan your curriculum</h3>
+  <h3 >Record your video</h3>
+  <h3>Launch your course</h3>
+</div>
+{/* how to begin section */}
+<div className='beginsection2' >
+    <div className='beginsection2-col1'>
+      <p>You start with your passion and knowledge. Then choose a promising topic with the help of our Marketplace Insights tool.</p>
+      <p>The way that you teach — what you bring to it — is up to you.</p>
+      <h4>How we help you</h4>
+      <p>We offer plenty of resources on how to create your first course. And, our instructor dashboard and curriculum pages help keep you organized.</p>
+    </div>
+
+  <div>
+    <img src="https://s.udemycdn.com/teaching/plan-your-curriculum-v3.jpg" />
+   </div>
+</div>
+</div>
+
+
+{/* instructor section */}
+
+<div className='fourthsection'>
+          <img src="https://s.udemycdn.com/teaching/instructors/en/frank-1x-v2.jpg" />
+          <div className='fourthsection1'>
+            <p>“I'm proud to wake up knowing my work is helping people around the world improve their careers and build great things. While being a full-time instructor is hard work, it lets you work when, where, and how you want.”</p>
+            <h6>Frank kane</h6>
+            <span>Data Science & IT Certifications</span>
+          </div>
+        </div>
 {/* next----------- */}
 
 <div className='doitalone'>
