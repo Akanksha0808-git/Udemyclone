@@ -92,7 +92,7 @@ const TechOnUdemy = () => {
 
 
 
-<Footer/>
+{/* <Footer/> */}
     </div>
   )
 }

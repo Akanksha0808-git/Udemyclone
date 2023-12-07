@@ -1,7 +1,7 @@
 import React , { useState, useEffect }from 'react'
 import { NavLink ,Link,useNavigate} from 'react-router-dom'
 import { useSelector } from "react-redux";
-
+import SearchResults from './SearchResults';
 import '@fortawesome/fontawesome-free/css/all.css'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
@@ -79,29 +79,7 @@ const Navbar = () => {
     // window.alert("Logout successfully")
     
   };
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-  const [isUdemyBuisnessHovered, setIsUdemyBuisnessHovered] = useState(false);
-  const [isTeachOnUdemyHovered, setIsTeachOnUdemyHovered] = useState(false);
-
-  const handleUdemyBuisnessMouseEnter = () => {
-    setIsUdemyBuisnessHovered(true);
-  };
-
-  const handleUdemyBuisnessMouseLeave = () => {
-    setIsUdemyBuisnessHovered(false);
-  };
-
-  const handleTeachOnUdemyMouseEnter = () => {
-    setIsTeachOnUdemyHovered(true);
-  };
-
-  const handleTeachOnUdemyMouseLeave = () => {
-    setIsTeachOnUdemyHovered(false);
-  };
+  
   const[val,setVal]=useState(true)
   const[side,setSide] =useState(true)
 
@@ -112,55 +90,85 @@ const Navbar = () => {
   const sideclick = ()=>{
     setSide(!side)
   }
+  // const [searchval,setsearchVal] = useState("")
+  // const searchhandle = (e)=>{
+  //   setsearchVal(
+  //     e.target.value)
+  // }
+
+  const [name, setname] = useState("");
+  // const [data1, setdata] = useState([]);
+  // // const url ="https://udemyclone-rx0k.onrender.com/search";
+  // const url ="http://localhost:7000/search";
+
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       if (name === "") {
+  //         setdata([]);
+  //         return;
+  //       }
+
+  //       const response = await axios.post( url , {
+  //         search: name,
+  //       });
+  //        console.log(response.data.data) 
+  //      await  setdata(response.data.data);
+  //     } catch (error) {
+  //       console.error("Error fetching data:", error);
+  //     }
+  //   };
+
+  //   fetchData();
+  // }, [name]);
+
+  // const handleChange = (e) => {
+  //   // e.preventDefault();
+  //   setname(e.target.value);
+
+  // };
+
+  // const handleSubmit = (e) => {
+  //   setname(e.target.value);
+
+  // };
+
+  // const handleLinkClick = () => {
+  //   // Reset the name state to an empty string when a link is clicked
+  //   setname("");
+  //     // Reset the data1 state to an empty array when a link is clicked
+  // setdata([]);
+  //   window.scroll(0, 0)
+  // };
+
+  // const[searchbtnval,setSearchbtnval] = useState(false)
+
+  // const searchbtnclick = ()=>{
+  //   setSearchbtnval(!searchbtnval)
+  // }
+
   const [searchval,setsearchVal] = useState("")
   const searchhandle = (e)=>{
     setsearchVal(
       e.target.value)
   }
 
-  const [name, setname] = useState("");
-  const [data1, setdata] = useState([]);
-  const url ="https://udemyclone-rx0k.onrender.com/search";
+  const[searchdata,setsearchdata] = useState()
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        if (name === "") {
-          setdata([]);
-          return;
-        }
 
-        const response = await axios.post( url , {
-          search: name,
-        });
-         console.log(response.data.data) 
-       await  setdata(response.data.data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
+  const searcclean = ()=>{
+    setsearchVal('')
+    console.log(searchdata);
+    navi("/searchcomp", {state:{state:searchval,data:searchdata}})
+  }
+  
 
-    fetchData();
-  }, [name]);
-
-  const handleChange = (e) => {
-    // e.preventDefault();
-    setname(e.target.value);
-
-  };
-
-  const handleSubmit = (e) => {
-    setname(e.target.value);
-
-  };
-
-  const handleLinkClick = () => {
-    // Reset the name state to an empty string when a link is clicked
-    setname("");
-      // Reset the data1 state to an empty array when a link is clicked
-  setdata([]);
-    window.scroll(0, 0)
-  };
+  useEffect(()=>{
+    axios.get(`https://udemyclone-api.onrender.com/api/search?searchval=${searchval}`).then((res)=>{
+      setsearchdata(res.data);
+    }).catch((err)=>console.log("Search Api error" , err))
+  },[searcclean])
 
   const[searchbtnval,setSearchbtnval] = useState(false)
 
@@ -194,7 +202,8 @@ const Navbar = () => {
                   </NavLink>
                 </p>
                 <div className='greatericon'> 
-                <i class="fa-solid fa-greater-than"></i></div>
+                {/* <i class="fa-solid fa-greater-than"></i> */}
+                </div>
                 <div className='subcategory-InnerList'>
                   {
                     subcategory[index].content.map((item,subindex)=>{
@@ -220,9 +229,9 @@ const Navbar = () => {
 
           {/* -------searchbar here-------- */}
       
-   <div className='Navsearch parentbox'>
+   {/* <div className='Navsearch parentbox'>
     
-    <label htmlFor='serchbtn' className='navlabel' onClick={handleSubmit} > <FontAwesomeIcon icon={faSearch}  className='searchicon' /></label>
+    <label htmlFor='serchbtn' className='navlabel' type="submit" onClick={handleSubmit} > <FontAwesomeIcon icon={faSearch}  className='searchicon' /></label>
       <input id='serchbtn' 
        name="search" 
        value={name}
@@ -233,27 +242,15 @@ const Navbar = () => {
           aria-label="Search"/>
       
     </div>
-    <div className="list">
-        {data1.length >0 ? (
-          <ul>
-            {data1.slice(0, 10).map((item, index) => (
-              <Link
-                        to={"/course/" + item.id }
-                        onClick={handleLinkClick}
-                        key={index}
-                      >
-              <li key={index}>{item.heading}</li>
-              </Link>
-              // <li key={index}>{item.heading}</li>
 
-            ))}
-          </ul>
-        ) : (
-         null
-        )}
+   
+       <div className="list">
+        {data1.length > 0 ? (
+          <SearchResults data={data1.slice(0, 20)} handleLinkClick={handleLinkClick} />
+        ) : null}
       </div>
     {/* mobile search  */}
-    <div className='mobilesearchicon'  onClick={searchbtnclick}>
+     {/* <div className='mobilesearchicon'  onClick={searchbtnclick}>
     <FontAwesomeIcon icon={faSearch}  className='searchicon' /> 
       </div>
 
@@ -262,7 +259,7 @@ const Navbar = () => {
         <div className='mobilesearchsection'>
           <div className='mobilesearch'>
           <label htmlFor='serchbtn' className='navlabel' 
-          // onClick={()=>{searcclean(),searchbtnclick()}} 
+          onClick={()=>{searcclean(),searchbtnclick()}} 
           >
            <FontAwesomeIcon icon={faSearch}  className='searchicon' />
            </label>
@@ -272,25 +269,35 @@ const Navbar = () => {
            placeholder='Search for anything' onChange={searchhandle} />
           </div> 
           <div className="list">
-        {data1.length >0 ? (
-          <ul>
-            {data1.slice(0, 10).map((item, index) => (
-              <Link
-                        to={"/detailpage/" + item.id }
-                        onClick={handleLinkClick}
-                        key={index}
-                      >
-              <li key={index}>{item.heading}</li>
-              </Link>
-
-            ))}
-          </ul>
-        ) : (
-         null
-        )}
+        {data1.length > 0 ? (
+          <SearchResults data={data1.slice(0, 20)} handleLinkClick={handleLinkClick} />
+        ) : null}
       </div>
         </div>
         
+      : " " */}
+      {/* }  */}
+
+      {/* search bar col */}
+      <div className='Navsearch'>
+        <label htmlFor='serchbtn' className='navlabel' onClick={searcclean} ><FontAwesomeIcon icon={faSearch} className='searchicon'/></label>
+        <input id='serchbtn' type='text' name="search" value={searchval} placeholder='Search for anything' onChange={searchhandle} />
+      </div>
+
+
+      {/* mobile search  */}
+      <div className='mobilesearchicon'  onClick={searchbtnclick}>
+      <FontAwesomeIcon icon={faSearch}  className='searchicon' /> 
+      </div>
+
+      {
+        searchbtnval ? 
+        <div className='mobilesearchsection'>
+          <div className='mobilesearch'>
+          <label htmlFor='serchbtn' className='navlabel' onClick={()=>{searcclean(),searchbtnclick()}} ><FontAwesomeIcon icon={faSearch} className='searchicon'/></label>
+          <input id='serchbtn' type='text' name="search" value={searchval} placeholder='Search for anything' onChange={searchhandle} />
+          </div> 
+        </div>
       : " "
       }
 
@@ -492,4 +499,11 @@ const Navbar = () => {
 }
 
 export default Navbar
+
+
+
+
+
+
+
 

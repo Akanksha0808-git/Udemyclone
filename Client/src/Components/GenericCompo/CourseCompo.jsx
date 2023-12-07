@@ -771,7 +771,6 @@ const CourseComp = () => {
             
         </div> 
         <ToastContainer/>
-<Footer/>
     </div>
   )
 }

@@ -1,0 +1,291 @@
+.searchmainsection{
+    background-color: white;
+    padding: 50px 4%;
+}
+.searchfilterstatic{
+    display: flex;
+    gap: 0 10px;
+    margin: 10px 0 30px 0;
+    cursor: pointer;
+}
+
+.resultno{
+    margin-bottom: 28px;
+    font-size: 3rem;
+}
+
+.searchfilterbtn{
+    border: 1px solid;
+    width: 6.2rem;
+    display: flex;
+    align-items: center;
+    place-content: center;
+    font-size: larger;
+    gap: 0 8px;}
+
+    .searchfilterbtn:hover{
+        background-color: rgb(236, 236, 236);
+    }
+
+.searchsort{
+    display: flex;
+    gap: 0 30px;
+    border: 1px solid;
+    padding: 5px 12px;
+}
+.searchsort:hover{
+    background-color: rgb(236, 236, 236);
+}
+.searchinner-sort span{
+    font-size: 12px;
+}
+
+.searcharrowdown{
+    position: relative;
+    top: 20px;
+}
+
+
+/* main */
+
+.searchmainContentParent{
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 25px;
+    justify-content: space-between;
+}
+
+.searchmaincontentcard-section{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.searchrating{
+    font-size: 19px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 15px 0;
+    border-top: 1px solid rgb(195, 195, 195);
+    padding-top: 20px;
+    width: fit-content;
+}
+
+.searchratingspan{
+    font-size: 14px;
+    line-height: 30px;
+}
+.searchmaincontentcard1{
+    width: 100%;
+}
+.searchmaincontentcard{
+    display: flex;
+    margin-bottom: 50px;
+    border-top: 1px solid rgb(208, 208, 208);
+    padding-top: 20px;
+    gap: 0 20px;
+    position: relative;
+}
+
+.searchheading{
+    width: 100%;
+}
+.searchmaincontentcard img{
+    width: 15rem;
+}
+
+.searchmainauthor{
+    font-size: 13px;
+    width: 100%;
+}
+
+.searchmaincourseDesc{
+    font-size: 13px;
+    width: 100%;
+    
+}
+.searchmaindes{
+    width: 80%;
+    font-size: 80%;
+}
+.searchprice{
+    height: fit-content;
+    width: fit-content;
+}
+
+
+/* hover template */
+
+.searchcardhovertemplate{
+    display: none;
+    position: absolute;
+    background-color: white;
+    left:150px;
+    bottom: 50px;
+    width: 80%;
+    height: 100%;
+    z-index: 2;
+    padding: 20px 8px 0;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.searchcardhovertemplate h3{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    height: 2rem;
+}
+.searchcardhovertemplate p{
+    line-height: 25px;
+    font-weight: 500;
+    height: 3rem;
+}
+.searchaddtocartbtn{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    background-color: #a435f0;
+    height: 40px;
+    color: white;
+    cursor: pointer;
+}
+.searchaddtocartbtn:hover{
+    background-color: #812db9;
+}
+.searchcardhovertemplate span{
+    font-size: small;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(160, 160, 160);
+}
+.searchmaincontentcard:hover .searchcardhovertemplate{
+    display: block;
+}
+
+@media (max-width:756px){
+    .searchmainsection{
+        background-color: white;
+        padding: 50px 4%;
+    }
+    /* .searchfilterstatic{ 
+        display: flex;
+        gap: 0 10px;
+        margin: 10px 0 30px 0;
+        cursor: pointer;
+    } */
+    
+    .resultno{
+        font-size: 2rem;
+    }   
+    
+    /* main */
+    
+    .searchmainContentParent{
+        display: flex;
+        flex-wrap: wrap;
+        line-height: 25px;
+        justify-content: space-between;
+    }
+    
+    .searchmaincontentcard-section{
+        width: 100%;
+    }
+    
+    .searchrating{
+        display: none;
+    }
+    
+    .searchmaincontentcard1{
+        width: 100%;
+    }
+    .searchmaincontentcard{
+        flex-direction: column;
+        padding-top: 20px;
+        gap: 10px 0px;
+        width: 100%;
+    }
+    
+    .searchheading{
+        width: 100%;
+    }
+    .searchmaincontentcard img{
+        width:100%;
+    }
+    
+    .searchmainauthor{
+        font-size: 13px;
+        width: 100%;
+    }
+    
+    .searchmaincourseDesc{
+        font-size: 13px;
+        width: 100%;
+        
+    }
+    .searchmaindes{
+        width: 80%;
+        font-size: 80%;
+    }
+    
+    
+    /* hover template */
+    
+    .searchcardhovertemplate{
+        display: none;
+        position: absolute;
+        left:10px;
+        bottom: 50px;
+        width: 50%;
+        height: 80%;
+    }
+    .searchcardhovertemplate h3{
+        font-size: x-large;
+        height: 6rem;
+    }
+    .searchcardhovertemplate p{
+        line-height:28px;
+        font-weight: 500;
+        height: 11rem;
+    }
+}
+
+@media (min-width:756px) and (max-width:1024px){
+    .searchrating{
+        display: none;
+    }
+    /* main */
+
+    .searchmainContentParent{
+        display: flex;
+        flex-wrap: wrap;
+        line-height: 25px;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .searchmaincontentcard-section{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    /* hover template */
+
+    .searchcardhovertemplate{
+        display: none;
+        position: absolute;
+        background-color: white;
+        left:20px;
+        width: 50%;
+    }
+    .searchcardhovertemplate h3{
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        height: 2.5rem;
+    }
+    .searchcardhovertemplate p{
+        line-height: 25px;
+        font-weight: 500;
+        height: 6rem;
+    }
+}

@@ -14,6 +14,7 @@ const allcourses = async (req, res)=>{
 const pushlearningdata = async(req,res)=>{
     const data = req.body;
     const learningdata = await mylearningCollection.create(data)
+
     res.send(learningdata)
 }
 

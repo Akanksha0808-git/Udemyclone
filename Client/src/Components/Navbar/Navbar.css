@@ -962,3 +962,64 @@
           display: block;
       }
   }
+  .Search{
+    width: 100%;
+    margin: auto;
+    position: absolute;
+    z-index: 10;
+    top: 70px;
+    right: 10px;
+  }
+  
+  /* .searchbar{
+    position: sticky;
+    top: 0;
+    z-index: 11;
+  } */
+  .list{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+    left: 40px;
+    top: 78px;
+    background-color: #fffffffa;
+    width: 50%;
+    font-size: 0.9rem;
+  }
+  .list a{
+    text-decoration: none;
+    font-weight: 500;
+    color: #394657;
+  }
+  .searchbox {
+    /* position: relative; */
+    height: 40px;
+    width: 100%;
+    margin-top: 48px;
+    /* background-color: yellow; */
+  
+  
+  }
+  
+  
+  
+  .search {
+    /* position: relative; */
+    border-radius: 20px;
+    height: 35px;
+    width: 400px;
+  }
+  .serachbtn{
+    /* position: absolute; */
+    font-size: 20px;
+    /* margin-top: 20px; */
+    top: 7px;
+    right: 110px;
+    background-color: white;
+    border: none;
+  }
+  
+  
+  

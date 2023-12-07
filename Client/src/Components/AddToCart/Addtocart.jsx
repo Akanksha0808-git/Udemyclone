@@ -84,7 +84,7 @@ const Addtocart = () => {
       "Content-Type": "application/json",
     };
     const response = await fetch(
-      "https://fignuscart-ly1x.onrender.com/api/create-checkout-session",
+      "https://akanksha-udemy.netlify.app/api/create-checkout-session",
       {
         method: "POST",
         headers: headers,
@@ -208,7 +208,6 @@ const Addtocart = () => {
 
     </div>
   
-<Footer/>
     </>
 
   )

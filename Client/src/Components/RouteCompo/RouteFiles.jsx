@@ -11,6 +11,8 @@ import Addtocart from '../AddToCart/Addtocart';
 import CourseComp from '../GenericCompo/CourseCompo';
 import SubroutesCompo from '../GenericCompo/SubroutesCompo';
 import Learning from '../GenericCompo/Learning';
+import SearchResults from '../Navbar/SearchResults';
+import Footer from '../Footer/Footer';
 const RouteFiles = () => {
   return (
     <>
@@ -27,17 +29,10 @@ const RouteFiles = () => {
   <Route path="/signup" element={<Signup/>}/>
   <Route path="/addtocart" element={<Addtocart/>}/>
   <Route path="/mylearning" element={<Learning/>}/>
-
-
-
-
-
-
-
-     
-      
-      
+  <Route path="/searchcomp" element={<SearchResults/>}/> 
       </Routes>
+<Footer/>
+
       </BrowserRouter> 
     </>
   )

@@ -1,6 +1,6 @@
 // let arr = []; // database
 const User=require("../model/userSchema")
-const Courses=require("../model/courseSchema")
+const {Courses}=require("../model/courseSchema")
 const saltround = 10
 const jwt=require("jsonwebtoken")
 const secretkey="#@$%^&*"

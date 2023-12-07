@@ -4,9 +4,11 @@ import "./Learning.css"
 
 const Learning = () => {
   const[data,setData] = useState()
+  const url="https://udemyclone-api.onrender.com/api/getlearningdata"
+  // const url="https://udemyclone-rx0k.onrender.com/getlearningdata"
   useEffect(()=>{
-    axios.get("https://udemyclone-api.onrender.com/api/getlearningdata").
-    then((res)=> setData(res.data)).catch(err=>console.log("My learning" ,err))
+    axios.get(url)
+    .then((res)=> setData(res.data)).catch(err=>console.log("My learning" ,err))
   },[])
   return (
     <div className="learningsection">
