@@ -113,9 +113,9 @@ const Home = () => {
 ]
   return (
     <div>
-      <Carousel1/>
+      {/* <Carousel1/> */}
    
-      <div className='banner'>
+      {/* <div className='banner'>
      
       <p>Trusted by over 15,000 companies and millions of learners around the world</p>
  
@@ -135,40 +135,11 @@ const Home = () => {
        </div>
 
       
-      </div>
+      </div> */}
     
 
     <p></p>
-      {/* <div className='broad-section-courses'>
-        <h2>A broad selection of courses</h2>
-        <p>Choose from over 210,000 online video courses with new additions published every month</p>
-       
-      
-       <div className='listcourses'> 
-       <ul>
-        <li>Python</li>
-        <li>Excel</li>
-        <li>Web Developement</li>
-        <li>JavaScript</li>
-        <li>Data Science</li>
-        <li>Amazon AWS</li>
-        <li>Drawing</li>
-
-        </ul>
-        </div>
-
-        <div className='boxofcourses'>
-          <div className='content'> <h2>Expand your career opportunities with Python</h2>
-            <p>
-            Take one of Udemy’s range of Python courses and learn how to code using this incredibly useful language. Its simple syntax and readability makes Python perfect for Flask, Django, data science, and machine learning. You’ll learn how to build everything from games to sites to apps. Choose from a range of courses that will appeal to both beginners and advanced developers alike.
-            </p></div>
-           
-            <button>Explore Python</button>
-            <div className='courses'>
-              <div></div>
-        </div>
-        </div>
-        </div> */}
+   
         <div className="selectionCourse">
         <div className="slectioncourse-1">
           <div className='selectioninner'>
@@ -177,21 +148,19 @@ const Home = () => {
           <div className="slectioncourse-2">
             <span className='span1'>Python</span>
             <span>Excel</span>
-            <span>Web Development</span>
+            {/* <span>Web Development</span> */}
             <span>JavaScript</span>
             <span>Data Science</span>
             <span>Amazon AWS</span>
             <span>Drawing</span>
           </div>
           </div>
-          {/* expand your carrer */}
           <div className='career1'>
             <h2>Expand your career opportunities with Python</h2>
             <p className='career1-p1'>Take one of Udemy's range of Python courses and learn how to code using this incredibly useful language. Its simple syntax and readability makes Python perfect for Flask, Django, data science, and machine learning. Youll learn how to build everything from games to sites to apps. Choose from a range of courses that will appeal to...</p>
             <div className='explore-btn'>Explore Python</div>
 
             <div className='carrerCard'>
-              {/* explore course */}
 
               {
                 data.map((item,index)=>{

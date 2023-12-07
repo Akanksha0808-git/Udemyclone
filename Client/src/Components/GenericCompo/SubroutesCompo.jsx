@@ -583,7 +583,7 @@ const SubroutesCompo = () => {
                     {/* cards */}
                     {
                         cardData.map((item,index)=>{
-                            if(index < 5)
+                            if(index < 4)
                             {
                                 return(
                                     <div key={index} className='cardmain'>
@@ -597,9 +597,7 @@ const SubroutesCompo = () => {
                                             <h3>{`${item.heading.slice(0,50)}...`}</h3>
                                             <span>{item.author}</span>
                                             <p>{item.des}</p>
-                                            {/* <div className='addtocartbtn' onClick={()=>addcartitem(item)}>
-                                            Add to cart
-                                            </div> */}
+                                         
                                             {verified ? (
                 <button className="addtocartbtn" onClick={() => handleClick(item)}>
                   Add To Cart

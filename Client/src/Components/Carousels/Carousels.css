@@ -1,5 +1,6 @@
 .carousel-container {
-    width: 100vw;
+  /* background-color: yellow; */
+    width: 100%;
     text-align: center;
     display: flex;
     align-items: center;
@@ -65,7 +66,6 @@ align-items: center;
   /* CardCarousel.css */
 
 .card-carousel {
-  /* background-color: yellow; */
   position: relative;
   display: flex;
   align-items: center;

@@ -555,11 +555,11 @@ const CourseComp = () => {
             {/* cards */}
             {
                 cardData.filter(item=>{
-                    if (item.id%4 === 0) {
+                    if (item.id%3 === 0) {
                         return item
                     }
                 }).map((item,index)=>{
-                    if(index < 5)
+                    if(index < 4)
                     {
                     return(
                         <div key={index} className='cardmain'>
