@@ -36,8 +36,7 @@ const Carousel1 = () => {
         <div>
         <img src={images[currentIndex]} alt={`Slide ${currentIndex}`} className="carousel-image" />
         </div>
-        <button onClick={prevSlide} className="carousel-control left">&lt;</button>
-        <button onClick={nextSlide} className="carousel-control right">&gt;</button>
+        
       </div>
     </div>
   );
