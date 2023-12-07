@@ -148,9 +148,6 @@ table td, tfoot, th, thead, tr{
   height:360px ;
 }
 
-.emptybtn{
-
-}
 @media screen and (max-width: 815px) {
   .OderProduct{
     /* width: 90vw; */

@@ -800,7 +800,6 @@ const SubroutesCompo = () => {
             
         </div> 
         <ToastContainer/>
-<Footer/>
 </div>
   )
 }

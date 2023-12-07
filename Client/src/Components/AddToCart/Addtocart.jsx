@@ -84,7 +84,7 @@ const Addtocart = () => {
       "Content-Type": "application/json",
     };
     const response = await fetch(
-      "https://akanksha-udemy.netlify.app/api/create-checkout-session",
+      "https://udemyclone-rx0k.onrender.com/api/create-checkout-session",
       {
         method: "POST",
         headers: headers,
