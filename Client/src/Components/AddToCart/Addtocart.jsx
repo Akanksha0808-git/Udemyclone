@@ -170,14 +170,14 @@ const Addtocart = () => {
               </tr>
 
               <tr>
-                <th>Item</th>
+                {/* <th>Item</th> */}
                 <th>Name</th>
                 <th>Price</th>
               </tr>
 
               {filteredItems.map((item, index) => (
   <tr key={index} className="Item_amount">
-    <td>No of item <span style={{ color: "#d63031" }}>({String(item.quantity || 0)})</span><br /></td>
+  
     <td>{item.name}</td>
     {/* Add a check for item.price */}
     <td>₹{(item.price ? item.price : 0) * (item.quantity || 0)}</td>
