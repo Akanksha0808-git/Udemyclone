@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import axios from "axios";
 import './LoginSignup.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Link, useNavigate  } from "react-router-dom";
 import Footer from '../Footer/Footer';
 
 const Signup = () => {
   const nav = useNavigate();
-
+  const notify = () => toast.success("Item is added to the cart");
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -46,7 +48,7 @@ const url="https://udemyclone-rx0k.onrender.com/signup"
             email: "",
             password: "",
           });
-          window.alert("user registered succesfully")
+          notify("user registered succesfully")
           nav("/login");
         } else {
           setdata(res.data.msg);
@@ -122,7 +124,7 @@ const url="https://udemyclone-rx0k.onrender.com/signup"
 
       <p>Already have an account? <a href="/login">Log in</a></p>
     </div>
-    <Footer/>
+    <ToastContainer/>
 
     </>
   );

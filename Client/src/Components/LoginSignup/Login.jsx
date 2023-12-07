@@ -11,6 +11,8 @@ import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const Navi = useNavigate();
+  const notify=toast.success("Login Successfully")
+
   const [formData, setFormData] = useState({
     email:"",
     name:"",
@@ -53,7 +55,8 @@ const url="https://udemyclone-rx0k.onrender.com/login"
           localStorage.setItem("token", token);
           localStorage.setItem("userid", usersid);
           localStorage.setItem("email", email);
-          toast.success("Login Successfully")
+          notify("Login Successfully")
+
           // window.alert("login Successfully")
           Navi("/"); 
 
@@ -138,7 +141,6 @@ const url="https://udemyclone-rx0k.onrender.com/login"
     </div>
 <ToastContainer/>
 
-      <Footer/>
     </>
   );
 };
