@@ -11,7 +11,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const Navi = useNavigate();
-  const notify=toast.success("Login Successfully")
+  const notify= () =>toast.success("Login Successfully")
 
   const [formData, setFormData] = useState({
     email:"",
