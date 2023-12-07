@@ -49,6 +49,7 @@ const url="https://udemyclone-rx0k.onrender.com/signup"
             password: "",
           });
           notify("user registered successfully");
+          window.alert("user registered successfully")
           nav("/login");
         } else {
           setdata(res.data.msg);

@@ -1,16 +1,13 @@
 import React , { useState, useEffect }from 'react'
 import { NavLink ,Link,useNavigate} from 'react-router-dom'
 import { useSelector } from "react-redux";
-import SearchResults from './SearchResults';
 import '@fortawesome/fontawesome-free/css/all.css'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { IoMdMenu } from "react-icons/io";
 import Badge from '@mui/material/Badge';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { GiHamburgerMenu } from 'react-icons/gi';
 import { IoMdClose } from "react-icons/io";
-// import { AiOutlineMenu } from 'react-icons/ai';
 import Avatar from '@mui/material/Avatar';
 import axios from "axios";
 
@@ -90,64 +87,10 @@ const Navbar = () => {
   const sideclick = ()=>{
     setSide(!side)
   }
-  // const [searchval,setsearchVal] = useState("")
-  // const searchhandle = (e)=>{
-  //   setsearchVal(
-  //     e.target.value)
-  // }
+  
 
   const [name, setname] = useState("");
-  // const [data1, setdata] = useState([]);
-  // // const url ="https://udemyclone-rx0k.onrender.com/search";
-  // const url ="http://localhost:7000/search";
-
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       if (name === "") {
-  //         setdata([]);
-  //         return;
-  //       }
-
-  //       const response = await axios.post( url , {
-  //         search: name,
-  //       });
-  //        console.log(response.data.data) 
-  //      await  setdata(response.data.data);
-  //     } catch (error) {
-  //       console.error("Error fetching data:", error);
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, [name]);
-
-  // const handleChange = (e) => {
-  //   // e.preventDefault();
-  //   setname(e.target.value);
-
-  // };
-
-  // const handleSubmit = (e) => {
-  //   setname(e.target.value);
-
-  // };
-
-  // const handleLinkClick = () => {
-  //   // Reset the name state to an empty string when a link is clicked
-  //   setname("");
-  //     // Reset the data1 state to an empty array when a link is clicked
-  // setdata([]);
-  //   window.scroll(0, 0)
-  // };
-
-  // const[searchbtnval,setSearchbtnval] = useState(false)
-
-  // const searchbtnclick = ()=>{
-  //   setSearchbtnval(!searchbtnval)
-  // }
-
+  
   const [searchval,setsearchVal] = useState("")
   const searchhandle = (e)=>{
     setsearchVal(
@@ -229,56 +172,6 @@ const Navbar = () => {
 
           {/* -------searchbar here-------- */}
       
-   {/* <div className='Navsearch parentbox'>
-    
-    <label htmlFor='serchbtn' className='navlabel' type="submit" onClick={handleSubmit} > <FontAwesomeIcon icon={faSearch}  className='searchicon' /></label>
-      <input id='serchbtn' 
-       name="search" 
-       value={name}
-          type="text"
-          onChange={handleChange}
-          placeholder="Search for anything"
-          className='search form-control'
-          aria-label="Search"/>
-      
-    </div>
-
-   
-       <div className="list">
-        {data1.length > 0 ? (
-          <SearchResults data={data1.slice(0, 20)} handleLinkClick={handleLinkClick} />
-        ) : null}
-      </div>
-    {/* mobile search  */}
-     {/* <div className='mobilesearchicon'  onClick={searchbtnclick}>
-    <FontAwesomeIcon icon={faSearch}  className='searchicon' /> 
-      </div>
-
-      {
-        searchbtnval ? 
-        <div className='mobilesearchsection'>
-          <div className='mobilesearch'>
-          <label htmlFor='serchbtn' className='navlabel' 
-          onClick={()=>{searcclean(),searchbtnclick()}} 
-          >
-           <FontAwesomeIcon icon={faSearch}  className='searchicon' />
-           </label>
-          <input id='serchbtn' type='text' name="search"
-          
-          // value={searchval}
-           placeholder='Search for anything' onChange={searchhandle} />
-          </div> 
-          <div className="list">
-        {data1.length > 0 ? (
-          <SearchResults data={data1.slice(0, 20)} handleLinkClick={handleLinkClick} />
-        ) : null}
-      </div>
-        </div>
-        
-      : " " */}
-      {/* }  */}
-
-      {/* search bar col */}
       <div className='Navsearch'>
         <label htmlFor='serchbtn' className='navlabel' onClick={searcclean} ><FontAwesomeIcon icon={faSearch} className='searchicon'/></label>
         <input id='serchbtn' type='text' name="search" value={searchval} placeholder='Search for anything' onChange={searchhandle} />
@@ -350,7 +243,7 @@ const Navbar = () => {
           <div className='dropshowhover'>
           <div className="avtar">
             {
-              email ? (<Avatar className="avtar " style={{ background: "skyblue" }}>{email.split("")[0].toUpperCase()}</Avatar>) : (<Avatar className="avtar " />)
+              email ? (<Avatar className="avtar " style={{ background: "black" }}>{email.split("")[0].toUpperCase()}</Avatar>) : (<Avatar className="avtar " />)
             }
           </div>
             
@@ -361,7 +254,7 @@ const Navbar = () => {
 
                 <div className="avtar">
             {
-              email ? (<Avatar className="avtar " style={{ background: "skyblue" }}>{email.split("")[0].toUpperCase()}</Avatar>) : (<Avatar className="avtar " />)
+              email ? (<Avatar className="avtar " style={{ background: "black" }}>{email.split("")[0].toUpperCase()}</Avatar>) : (<Avatar className="avtar " />)
             }
           </div>
           <p>{email}</p>
