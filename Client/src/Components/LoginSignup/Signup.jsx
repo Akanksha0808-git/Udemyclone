@@ -8,7 +8,7 @@ import Footer from '../Footer/Footer';
 
 const Signup = () => {
   const nav = useNavigate();
-  const notify = () => toast.success("Item is added to the cart");
+  const notify = () => toast.success("User registered Successfully");
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -48,7 +48,7 @@ const url="https://udemyclone-rx0k.onrender.com/signup"
             email: "",
             password: "",
           });
-          notify("user registered succesfully")
+          notify();
           nav("/login");
         } else {
           setdata(res.data.msg);
