@@ -1,7 +1,6 @@
 import React from 'react'
 import { BrowserRouter ,Routes ,Route } from 'react-router-dom';
 import Home from '../Pages/Home';
-import Categories from '../Pages/categories/Categories';
 import Navbar from '../Navbar/Navbar';
 import TechOnUdemy from '../Pages/TechOnUdemy';
 import UdemyBuisness from '../Pages/UdemyBuisness';
@@ -20,7 +19,6 @@ const RouteFiles = () => {
       <Navbar/>
       <Routes>
     <Route path="/" element={<Home/>}/>
-  <Route path="/category" element ={<Categories/>}/>
   <Route path='/course/:category' element={<CourseComp/>} />
   <Route path='/course/:category/:subcategory' element={<SubroutesCompo/>} />
   <Route path="/techonudemy" element={<TechOnUdemy/>}/>
