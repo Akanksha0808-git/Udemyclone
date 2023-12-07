@@ -138,11 +138,7 @@ const Addtocart = () => {
         <p className="BrandPrice">Course-Price: ₹<span>{item.price}</span></p>
 
         <div className="Order_btn">
-          <div className="incDre_tn">
-            <button className="Left_button" onClick={() => handleDecrement(item.id, item.quantity)}> - </button>
-            <h4 className="value">{item.quantity}</h4>
-            <button className="Right_button" onClick={() => handleIncrement(item.id)}>+</button>
-          </div>
+         
           
           <div className="remove">
             <button onClick={() => handleRemove(item.id)}>Remove</button>

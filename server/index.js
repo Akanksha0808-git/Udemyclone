@@ -10,8 +10,10 @@ const app = express();
 const PORT = process.env.PORT || 7000;
 
 // Cors policy
+  // origin: "https://akanksha-udemy.netlify.app",
+
 app.use(cors({
-  origin: "https://akanksha-udemy.netlify.app",
+  origin: "*"
 }));
 
 // Body parser
